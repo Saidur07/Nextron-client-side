@@ -46,19 +46,19 @@ const Register = () => {
     console.log(user);
   }
   return (
-    <div>
-      <h1 className="md:text-5xl text-3xl text-center my-8 text-gray-700">
+    <div className="bg-realBlack">
+      <h1 className="md:text-5xl text-3xl text-center py-8 text-gray-300">
         HEY! REGISTER!!
       </h1>
-      <hr className="container mx-auto w-1/2 md:w-1/4" />
+      <hr className="container mx-auto w-full lg:w-1/2" />
       <form
         onSubmit={handleRegister}
-        className="container mx-auto md:w-1/4 mt-8"
+        className="container mx-auto md:w-2/5 mt-8"
       >
         <div className="mb-6 w-3/4 mx-auto md:w-full ">
           <label
             htmlFor="name"
-            className="block mb-2 text-sm font-medium text-gray-900 "
+            className="block mb-2 text-md font-medium text-gray-300 "
           >
             Your name
           </label>
@@ -66,14 +66,14 @@ const Register = () => {
             type="text"
             id="name"
             name="name"
-            className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+            className="shadow-md bg-gray-700  border border-gray-900 text-gray-300 text-md rounded-md block w-full p-3"
             required
           />
         </div>
         <div className="mb-6 w-3/4 mx-auto md:w-full ">
           <label
             htmlFor="email"
-            className="block mb-2 text-sm font-medium text-gray-900"
+            className="block mb-2 text-md font-medium text-gray-300"
           >
             Your email
           </label>
@@ -81,14 +81,14 @@ const Register = () => {
             type="email"
             id="email"
             name="email"
-            className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+            className="shadow-md bg-gray-700  border border-gray-900 text-gray-300 text-md rounded-md block w-full p-3"
             required
           />
         </div>
         <div className="mb-6 w-3/4 mx-auto md:w-full ">
           <label
             htmlFor="password"
-            className="block mb-2 text-sm font-medium text-gray-900"
+            className="block mb-2 text-md font-medium text-gray-300"
           >
             Your password
           </label>
@@ -96,7 +96,7 @@ const Register = () => {
             type="password"
             id="password"
             name="password"
-            className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 "
+            className="shadow-md bg-gray-700  border border-gray-900 text-gray-300 text-md rounded-md block w-full p-3"
             required
           />
         </div>
@@ -112,18 +112,24 @@ const Register = () => {
             />
           </div>
           <div className="ml-3 text-sm">
-            <label htmlFor="terms" className="font-medium text-gray-900 ">
+            <label htmlFor="terms" className="font-medium text-gray-300 ">
               I agree with the{" "}
-              <Link to="/terms" className="text-blue-600 hover:underline ">
+              <Link
+                to="/terms"
+                className="text-sky-500 hover:tracking-widest transition-all hover:scale-x-105 hover:ml-1 "
+              >
                 terms and conditions
               </Link>
             </label>
           </div>
         </div>
         <div className="text-sm block mb-4  w-3/4 mx-auto md:w-full">
-          <p className="font-medium text-gray-900 ">
+          <p className="font-medium text-gray-300 ">
             Already Have an Account?{" "}
-            <Link to="/login" className="text-blue-600 hover:underline ">
+            <Link
+              to="/login"
+              className="text-sky-500 hover:tracking-widest transition-all hover:scale-x-105 hover:ml-1 "
+            >
               Login!
             </Link>
           </p>
@@ -137,8 +143,10 @@ const Register = () => {
           ""
         )}
         <button
+          data-mdb-ripple="true"
+          data-mdb-ripple-color="dark"
           type="submit"
-          className="text-white bg-blue-500 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-4 text-center block mx-auto w-1/2"
+          className="text-white bg-blue-600 hover:bg-blue-700 focus:outline-none  font-medium rounded-lg text-md px-5 py-4 text-center block mx-auto w-1/2"
         >
           Register
         </button>

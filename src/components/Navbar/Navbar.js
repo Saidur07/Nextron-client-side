@@ -6,22 +6,19 @@ import CustomLink from "../Shared/CustomLink/CustomLink";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import { signOut } from "firebase/auth";
+import useNavLinks from "../../hooks/useNavLinks";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const navigation = [
-    { id: 1, name: "Home", to: "/" },
-    { id: 2, name: "Services", to: "/services" },
-    { id: 3, name: "Blogs", to: "/blogs" },
-    { id: 4, name: "About", to: "/about" },
-  ];
+  const [navLinks] = useNavLinks("navLinks.json");
+  const [userNavLinks] = useNavLinks("userNavLinks.json");
   const [user] = useAuthState(auth);
   const handleSignOut = () => {
     signOut(auth);
   };
 
   return (
-    <div className="px-4 py-2 mx-auto  md:px-20 z-10 lg:px-20 sticky top-0 bg-realBlack ">
+    <div className="px-4 py-2 mx-auto  md:px-20 z-10 lg:px-20 sticky top-0 bg-realBlack  border-b-2 border-gray-700 ">
       <div className="relative flex items-center justify-between">
         <Link to="/" className="inline-flex items-center w-1/12">
           <img src={logo} alt="" className="md:w-24 w-16 rounded-xl" />
@@ -30,16 +27,27 @@ const Navbar = () => {
           </span>
         </Link>
         <ul className=" items-center hidden space-x-8 mr-8 lg:flex">
-          {navigation.map((nav) => (
-            <li key={nav.id}>
-              <CustomLink
-                to={nav.to}
-                className="font-medium tracking-wide text-gray-100 transition-all duration-200 hover:scale-150 hover:text-blue-300 active:scale-95"
-              >
-                {nav.name}
-              </CustomLink>
-            </li>
-          ))}
+          {user
+            ? userNavLinks.map((nav) => (
+                <li key={nav.id}>
+                  <CustomLink
+                    to={nav.to}
+                    className="font-medium tracking-wide text-gray-100 transition-all duration-200 hover:scale-150 hover:text-blue-300 active:scale-95"
+                  >
+                    {nav.name}
+                  </CustomLink>
+                </li>
+              ))
+            : navLinks.map((nav) => (
+                <li key={nav.id}>
+                  <CustomLink
+                    to={nav.to}
+                    className="font-medium tracking-wide text-gray-100 transition-all duration-200 hover:scale-150 hover:text-blue-300 active:scale-95"
+                  >
+                    {nav.name}
+                  </CustomLink>
+                </li>
+              ))}
         </ul>
         <ul className=" items-center hidden space-x-2 lg:flex">
           <li>
@@ -67,10 +75,10 @@ const Navbar = () => {
           <li>
             {user ? (
               <button
-                onClick={handleSignOut}
-                type="button"
                 data-mdb-ripple="true"
                 data-mdb-ripple-color="dark"
+                onClick={handleSignOut}
+                type="button"
                 className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-gray-700 hover:bg-gray-600 focus:shadow-outline focus:outline-none active:scale-90"
               >
                 Log Out
@@ -91,6 +99,8 @@ const Navbar = () => {
         </ul>
         <div className="lg:hidden">
           <button
+            data-mdb-ripple="true"
+            data-mdb-ripple-color="dark"
             aria-label="Open Menu"
             title="Open Menu"
             className="p-2 -mr-1 transition duration-200 rounded focus:outline-none focus:shadow-outline hover:bg-deep-purple-50 focus:bg-deep-purple-50"
@@ -125,6 +135,8 @@ const Navbar = () => {
                   </div>
                   <div>
                     <button
+                      data-mdb-ripple="true"
+                      data-mdb-ripple-color="dark"
                       aria-label="Close Menu"
                       title="Close Menu"
                       className="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
@@ -141,7 +153,7 @@ const Navbar = () => {
                 </div>
                 <nav>
                   <ul className="space-y-4">
-                    {navigation.map((nav) => (
+                    {navLinks.map((nav) => (
                       <li key={nav.id}>
                         <CustomLink
                           to={nav.to}
@@ -173,6 +185,8 @@ const Navbar = () => {
                     <li>
                       {user ? (
                         <button
+                          data-mdb-ripple="true"
+                          data-mdb-ripple-color="dark"
                           onClick={handleSignOut}
                           className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-gray-600 hover:bg-gray-500 focus:shadow-outline focus:outline-none"
                         >

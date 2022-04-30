@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
@@ -28,12 +28,7 @@ const Login = () => {
   };
 
   if (user) {
-    if (user.user.emailVerified) {
-      navigate(from, { replace: true });
-    }
-    if (!user.user.emailVerified) {
-      toast.warning("Please verify your email first!");
-    }
+    navigate(from, { replace: true });
   }
   if (error) {
     toast.error(`ERROR : ${error}`);
@@ -49,16 +44,16 @@ const Login = () => {
   };
 
   return (
-    <div>
-      <h1 className="md:text-5xl text-3xl text-center my-8 text-gray-700">
+    <div className="bg-realBlack">
+      <h1 className="md:text-5xl text-3xl text-center py-8 text-gray-300">
         HEY! LOGIN!!
       </h1>
-      <hr className="container mx-auto w-1/2 md:w-1/4" />
-      <form onSubmit={handleSubmit} className="container mx-auto md:w-1/4 mt-8">
+      <hr className="container mx-auto w-full lg:w-1/2" />
+      <form onSubmit={handleSubmit} className="container mx-auto md:w-2/5 mt-8">
         <div className="mb-6 w-3/4 mx-auto md:w-full">
           <label
             htmlFor="email"
-            className="block mb-2 text-sm font-medium text-gray-900"
+            className="block mb-2 text-md font-medium text-gray-300"
           >
             Your email
           </label>
@@ -66,14 +61,14 @@ const Login = () => {
             ref={emailRef}
             type="email"
             id="email"
-            className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 "
+            className="shadow-md bg-gray-700  border border-gray-900 text-gray-300 text-md rounded-md block w-full p-3 "
             required
           />
         </div>
         <div className="mb-6 w-3/4 mx-auto md:w-full">
           <label
             htmlFor="password"
-            className="block mb-2 text-sm font-medium text-gray-900"
+            className="block mb-2 text-md font-medium text-gray-300"
           >
             Your password
           </label>
@@ -81,23 +76,28 @@ const Login = () => {
             ref={passwordRef}
             type="password"
             id="password"
-            className="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-indigo-500 focus:border-indigo-500 block w-full p-2.5 "
+            className="shadow-md bg-gray-700  border border-gray-900 text-gray-300 text-md rounded-md block w-full p-3 "
             required
           />
         </div>
 
-        <div className="text-sm block mb-4 w-3/4 mx-auto md:w-full">
-          <p className="font-medium text-gray-900 ">
+        <div className="text-md block mb-4 w-3/4 mx-auto md:w-full">
+          <p className="font-medium text-gray-300 ">
             Don't Have an Account?{" "}
-            <Link to="/register" className="text-blue-600 hover:underline ">
+            <Link
+              to="/register"
+              className="text-sky-500 hover:tracking-widest transition-all hover:scale-x-105 hover:ml-1"
+            >
               Register!
             </Link>
           </p>
-          <p className="font-medium text-gray-900 mt-4">
+          <p className="font-medium text-gray-300 mt-4">
             Forgot Password?{" "}
             <button
+              data-mdb-ripple="true"
+              data-mdb-ripple-color="dark"
               onClick={resetPassword}
-              className="text-blue-600 hover:underline "
+              className="text-sky-500 hover:tracking-widest transition-all hover:scale-x-105 hover:ml-1 "
             >
               Reset it!
             </button>
@@ -106,8 +106,10 @@ const Login = () => {
         {loading || sending ? <Loader></Loader> : ""}
 
         <button
+          data-mdb-ripple="true"
+          data-mdb-ripple-color="dark"
           type="submit"
-          className="text-white bg-blue-500 hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-4 text-center block mx-auto w-1/2"
+          className="text-white bg-blue-600 hover:bg-blue-700 focus:outline-none  font-medium rounded-lg text-md px-5 py-4 text-center block mx-auto w-1/2"
         >
           Login
         </button>
