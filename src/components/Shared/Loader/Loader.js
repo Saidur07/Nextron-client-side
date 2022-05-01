@@ -4,7 +4,7 @@ import "./Loader.css";
 const Loader = () => {
   return (
     <div>
-      {/* <div class="spinner mx-auto my-4">
+      {/* <div className="spinner mx-auto my-4">
         <div></div>
         <div></div>
         <div></div>
@@ -13,14 +13,14 @@ const Loader = () => {
       </div> */}
       <div className="my-4">
         <svg
-          class="pl mx-auto"
+          className="pl mx-auto"
           width="128px"
           height="128px"
           viewBox="0 0 128 128"
           xmlns="http://www.w3.org/2000/svg"
         >
           <circle
-            class="pl__ring1"
+            className="pl__ring1"
             cx="64"
             cy="64"
             r="60"
@@ -34,7 +34,7 @@ const Loader = () => {
             stroke-dashoffset="-376.4"
           ></circle>
           <circle
-            class="pl__ring2"
+            className="pl__ring2"
             cx="64"
             cy="64"
             r="52.5"
@@ -48,7 +48,7 @@ const Loader = () => {
             stroke-dashoffset="-329.3"
           ></circle>
           <circle
-            class="pl__ring3"
+            className="pl__ring3"
             cx="64"
             cy="64"
             r="46"
@@ -62,7 +62,7 @@ const Loader = () => {
             stroke-dashoffset="-288.6"
           ></circle>
           <circle
-            class="pl__ring4"
+            className="pl__ring4"
             cx="64"
             cy="64"
             r="40.5"
@@ -76,7 +76,7 @@ const Loader = () => {
             stroke-dashoffset="-254"
           ></circle>
           <circle
-            class="pl__ring5"
+            className="pl__ring5"
             cx="64"
             cy="64"
             r="36"
@@ -90,7 +90,7 @@ const Loader = () => {
             stroke-dashoffset="-225.8"
           ></circle>
           <circle
-            class="pl__ring6"
+            className="pl__ring6"
             cx="64"
             cy="64"
             r="32.5"

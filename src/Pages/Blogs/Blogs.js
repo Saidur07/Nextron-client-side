@@ -10,13 +10,13 @@ const Blogs = () => {
       </h1>
       <hr className="w-2/3 md:w-1/2 mx-auto border-white" />
       <div
-        class="accordion w-full px-2 md:w-1/2 mx-auto py-6 mt-12"
+        className="accordion w-full px-2 md:w-1/2 mx-auto py-6 mt-12"
         id="accordionExample"
       >
-        <div class="accordion-item bg-white border border-gray-200">
-          <h2 class="accordion-header mb-0" id="headingOne">
+        <div className="accordion-item bg-white border border-gray-200">
+          <h2 className="accordion-header mb-0" id="headingOne">
             <button
-              class="
+              className="
         accordion-button
         relative
         flex
@@ -42,19 +42,19 @@ const Blogs = () => {
           </h2>
           <div
             id="collapseOne"
-            class="accordion-collapse collapse show"
+            className="accordion-collapse collapse show"
             aria-labelledby="headingOne"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body py-4 px-5">
-              <div class="p-6 shadow-lg rounded-lg bg-gray-100 text-gray-700">
-                <h2 class="font-semibold text-3xl mb-5">
+            <div className="accordion-body py-4 px-5">
+              <div className="p-6 shadow-lg rounded-lg bg-gray-100 text-gray-700">
+                <h2 className="font-semibold text-3xl mb-5">
                   What is the difference between javascript and nodejs ?{" "}
                   <div className="tags flex justify-center items-center my-4">
-                    <span class="px-4 py-2 rounded-full text-gray-800 bg-gray-200 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-gray-300 transition duration-300 ease mx-2">
+                    <span className="px-4 py-2 rounded-full text-gray-800 bg-gray-200 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-gray-300 transition duration-300 ease mx-2">
                       JS
                     </span>
-                    <span class="px-4 py-2 rounded-full text-gray-800 bg-gray-200 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-gray-300 transition duration-300 ease mx-2">
+                    <span className="px-4 py-2 rounded-full text-gray-800 bg-gray-200 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-gray-300 transition duration-300 ease mx-2">
                       NodeJS
                     </span>
                   </div>
@@ -64,7 +64,7 @@ const Blogs = () => {
                   and simple frontend programming language versus the framework
                   that allows it to extend into the backend realm.
                 </p>
-                <hr class="my-6 border-gray-300" />
+                <hr className="my-6 border-gray-300" />
                 <p>
                   JavaScript is a scripting language upon which most websites
                   are based. It is often used in combination with HTML and CSS
@@ -73,7 +73,7 @@ const Blogs = () => {
                   the page to update data, display information using cool
                   visuals, and create interactive elements.
                 </p>
-                <hr class="my-6 border-gray-300" />
+                <hr className="my-6 border-gray-300" />
                 <p>
                   Node.js is an environment that can run JavaScript code without
                   a browser. It is built on Chrome’s V8 JavaScript engine. The
@@ -86,10 +86,10 @@ const Blogs = () => {
             </div>
           </div>
         </div>
-        <div class="accordion-item bg-white border border-gray-200">
-          <h2 class="accordion-header mb-0" id="headingTwo">
+        <div className="accordion-item bg-white border border-gray-200">
+          <h2 className="accordion-header mb-0" id="headingTwo">
             <button
-              class="
+              className="
         accordion-button
         collapsed
         relative
@@ -116,20 +116,20 @@ const Blogs = () => {
           </h2>
           <div
             id="collapseTwo"
-            class="accordion-collapse collapse"
+            className="accordion-collapse collapse"
             aria-labelledby="headingTwo"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body py-4 px-5">
-              <div class="p-6 shadow-lg rounded-lg bg-gray-100 text-gray-700">
-                <h2 class="font-semibold text-3xl mb-5">
+            <div className="accordion-body py-4 px-5">
+              <div className="p-6 shadow-lg rounded-lg bg-gray-100 text-gray-700">
+                <h2 className="font-semibold text-3xl mb-5">
                   When should you use nodejs and when should you use mongodb?
                 </h2>
                 <div className="tags flex justify-center items-center my-4">
-                  <span class="px-4 py-2 rounded-full text-gray-800 bg-gray-200 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-gray-300 transition duration-300 ease mx-2">
+                  <span className="px-4 py-2 rounded-full text-gray-800 bg-gray-200 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-gray-300 transition duration-300 ease mx-2">
                     NodeJS
                   </span>
-                  <span class="px-4 py-2 rounded-full text-gray-800 bg-gray-200 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-gray-300 transition duration-300 ease mx-2">
+                  <span className="px-4 py-2 rounded-full text-gray-800 bg-gray-200 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-gray-300 transition duration-300 ease mx-2">
                     MongoDB
                   </span>
                 </div>
@@ -138,7 +138,7 @@ const Blogs = () => {
                   is used for backend purposes and Mongo is used for NoSQL
                   databases.
                 </p>
-                <hr class="my-6 border-gray-300" />
+                <hr className="my-6 border-gray-300" />
                 <p>
                   Node JS has become one of the most popular languages
                   developers use in recent years due to its ease of use,
@@ -161,10 +161,10 @@ const Blogs = () => {
             </div>
           </div>
         </div>
-        <div class="accordion-item bg-white border border-gray-200">
-          <h2 class="accordion-header mb-0" id="headingThree">
+        <div className="accordion-item bg-white border border-gray-200">
+          <h2 className="accordion-header mb-0" id="headingThree">
             <button
-              class="
+              className="
         accordion-button
         collapsed
         relative
@@ -191,20 +191,20 @@ const Blogs = () => {
           </h2>
           <div
             id="collapseThree"
-            class="accordion-collapse collapse"
+            className="accordion-collapse collapse"
             aria-labelledby="headingThree"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body py-4 px-5">
-              <div class="p-6 shadow-lg rounded-lg bg-gray-100 text-gray-700">
-                <h2 class="font-semibold text-3xl mb-5">
+            <div className="accordion-body py-4 px-5">
+              <div className="p-6 shadow-lg rounded-lg bg-gray-100 text-gray-700">
+                <h2 className="font-semibold text-3xl mb-5">
                   What is the differences between sql and nosql databases?
                 </h2>
                 <div className="tags flex justify-center items-center my-4">
-                  <span class="px-4 py-2 rounded-full text-gray-800 bg-gray-200 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-gray-300 transition duration-300 ease mx-2">
+                  <span className="px-4 py-2 rounded-full text-gray-800 bg-gray-200 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-gray-300 transition duration-300 ease mx-2">
                     SQL
                   </span>
-                  <span class="px-4 py-2 rounded-full text-gray-800 bg-gray-200 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-gray-300 transition duration-300 ease mx-2">
+                  <span className="px-4 py-2 rounded-full text-gray-800 bg-gray-200 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-gray-300 transition duration-300 ease mx-2">
                     NoSQL
                   </span>
                 </div>
@@ -212,7 +212,7 @@ const Blogs = () => {
                   Here is the some of the key differences between SQL and NoSQL
                   databases.
                 </p>
-                <hr class="my-6 border-gray-300" />
+                <hr className="my-6 border-gray-300" />
                 <p>
                   SQL or the Structured Query Language is the most common and
                   popular programming language for the relational database
@@ -235,7 +235,7 @@ const Blogs = () => {
                     Suitable for every type of organization – large or small.{" "}
                   </li>
                 </ul>
-                <hr class="my-6 border-gray-300" />
+                <hr className="my-6 border-gray-300" />
                 <p>
                   NoSQL database provides a mechanism for storage and retrieval
                   of data that is modelled other than tabular form. It was
@@ -271,10 +271,10 @@ const Blogs = () => {
             </div>
           </div>
         </div>
-        <div class="accordion-item bg-white border border-gray-200">
-          <h2 class="accordion-header mb-0" id="headingFour">
+        <div className="accordion-item bg-white border border-gray-200">
+          <h2 className="accordion-header mb-0" id="headingFour">
             <button
-              class="
+              className="
         accordion-button
         collapsed
         relative
@@ -301,17 +301,17 @@ const Blogs = () => {
           </h2>
           <div
             id="collapseFour"
-            class="accordion-collapse collapse"
+            className="accordion-collapse collapse"
             aria-labelledby="headingFour"
             data-bs-parent="#accordionExample"
           >
-            <div class="accordion-body py-4 px-5">
-              <div class="p-6 shadow-lg rounded-lg bg-gray-100 text-gray-700">
-                <h2 class="font-semibold text-3xl mb-5">
+            <div className="accordion-body py-4 px-5">
+              <div className="p-6 shadow-lg rounded-lg bg-gray-100 text-gray-700">
+                <h2 className="font-semibold text-3xl mb-5">
                   What is the purpose of JWT and how does it work?
                 </h2>
                 <div className="tags flex justify-center items-center my-4">
-                  <span class="px-4 py-2 rounded-full text-gray-800 bg-gray-200 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-gray-300 transition duration-300 ease mx-2">
+                  <span className="px-4 py-2 rounded-full text-gray-800 bg-gray-200 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-gray-300 transition duration-300 ease mx-2">
                     JWT
                   </span>
                 </div>
@@ -319,7 +319,7 @@ const Blogs = () => {
                   JSON Web Token (JWT) is an open standard for securely
                   transmitting information between parties as JSON object.
                 </p>
-                <hr class="my-6 border-gray-300" />
+                <hr className="my-6 border-gray-300" />
                 <p>
                   The purpose of using JWT is not to hide data but to ensure the
                   authenticity of the data. JWT is signed and encoded, not

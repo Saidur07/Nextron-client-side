@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
-import Service from "../../components/Shared/Service/Service";
+import Product from "../../components/Product/Product.js";
 
-const Services = () => {
-  const [services, setServices] = useState([]);
+const Products = () => {
+  const [products, setProducts] = useState([]);
   useEffect(() => {
-    fetch("services.json")
+    fetch("Products.json")
       .then((res) => res.json())
-      .then((data) => setServices(data));
+      .then((data) => setProducts(data));
   }, []);
   return (
     <div>
       <h2 className="mt-8 max-w-lg mb-6 font-sans text-2xl text-center font-bold leading-none tracking-tight text-gray-900 sm:text-3xl md:mx-auto">
         <span>
-          Services <br />
+          Products <br />
         </span>
         from Alex Johnson
       </h2>
@@ -22,8 +22,8 @@ const Services = () => {
       <hr className="w-2/3 mx-auto my-8" />
       <div className="mx-auto w-2/3 mt-4">
         <div className="grid gap-5 mb-8 md:grid-cols-2 ">
-          {services.map((service) => (
-            <Service key={service.id} data={service}></Service>
+          {products.map((product) => (
+            <Product key={product.id} data={product}></Product>
           ))}
         </div>
       </div>
@@ -31,4 +31,4 @@ const Services = () => {
   );
 };
 
-export default Services;
+export default Products;

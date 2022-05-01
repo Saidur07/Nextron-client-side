@@ -1,42 +1,97 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import person from "../../assets/images/person.png";
 
 const Header = () => {
   return (
-    <div className="main flex flex-col justify-between max-w-xl px-4 mx-auto lg:pt-16 lg:flex-row md:px-8 lg:max-w-screen-xl md:mb-24">
-      <div className="pt-16 mb-16 lg:mb-0 lg:pt-32 lg:max-w-lg lg:pr-5">
-        <div className="max-w-xl mb-6">
-          <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none">
-            Alex Johnson
-            <br />
-            <span className="text-lg sm:text-xl tracking-wide font-mono font-semibold">
-              Teacher| Designer | Programmer
-            </span>
-          </h2>
-          <p className="text-base text-gray-700 md:text-lg">
-            Alex Johnson is a online teacher. He teaches about Graphic
-            designing, Video Editing, Games Development, App Development etc. He
-            is loved by his students. He is Currently 45. He completed his MA in
-            Computer Science and Engineering from Harvard. He have a 10 years +
-            Experience of teaching.
-          </p>
-        </div>
-        <div className="flex items-center">
-          <Link
-            to="/"
-            className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-gray-700 hover:bg-gray-600 focus:shadow-outline focus:outline-none active:scale-90"
+    <div>
+      <div
+        className="hero"
+        style={{
+          backgroundImage:
+            "url(https://wallpapersmug.com/large/3bcbc6/digital-art-neon-bubbles.jpg)",
+          minHeight: "70vh",
+        }}
+      >
+        <div className="hero-overlay bg-opacity-60"></div>
+        <div className="hero-content flex-col  lg:flex-row-reverse">
+          <div
+            id="carouselDarkVariant"
+            className="carousel slide carousel-fade carousel-dark relative lg:w-1/2 sm:w-2/3 w-full rounded-xl animate-wiggle "
+            data-bs-ride="carousel"
           >
-            Know More
-          </Link>
+            <div className="carousel-inner relative w-full overflow-hidden">
+              <div className="carousel-item relative active float-left w-full">
+                <img
+                  src="https://i.pinimg.com/originals/ab/5f/d9/ab5fd955d44104d1d4d1ed588d3a977c.gif"
+                  className="block w-full h-96 hover:scale-125  transition-all"
+                  alt=""
+                />
+              </div>
+              <div className="carousel-item relative  float-left w-full">
+                <img
+                  src="https://cdn.dribbble.com/users/24011/screenshots/4219260/thunderly_intro_dribbble2.gif"
+                  className="block w-full h-96 hover:scale-125 scale-110 transition-all"
+                  alt=""
+                />
+              </div>
+              <div className="carousel-item  relative float-left w-full">
+                <img
+                  src="https://miro.medium.com/max/1400/1*Ppchri1j6T4Vtg7r7o4oNA.gif"
+                  className="block w-full h-96 hover:scale-125 scale-125 transition-all"
+                  alt=""
+                />
+              </div>
+            </div>
+
+            {/* <button
+              className="carousel-control-prev absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline left-0"
+              type="button"
+              data-bs-target="#carouselDarkVariant"
+              data-bs-slide="prev"
+            >
+              <span
+                className="carousel-control-prev-icon inline-block bg-no-repeat"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Previous</span>
+            </button>
+            <button
+              className="carousel-control-next absolute top-0 bottom-0 flex items-center justify-center p-0 text-center border-0 hover:outline-none hover:no-underline focus:outline-none focus:no-underline right-0"
+              type="button"
+              data-bs-target="#carouselDarkVariant"
+              data-bs-slide="next"
+            >
+              <span
+                className="carousel-control-next-icon inline-block bg-no-repeat"
+                aria-hidden="true"
+              ></span>
+              <span className="visually-hidden">Next</span>
+            </button> */}
+          </div>
+          <div className="lg:w-1/2 sm:w-2/3 w-full animate-open">
+            <h1 className="md:text-5xl text-4xl font-bold text-white font-sans tracking-widest md:italic sm:text-center">
+              Nextron!
+            </h1>
+            <h3 className="md:text-3x text-2xl  font-bold text-slate-300 font-serif sm:text-center">
+              The Next Generation Warehouse.
+            </h3>
+            <p className="py-6 text-slate-200 text-lg">
+              Nextron is a Warehouse based on electrical products. You can add,
+              manage, remove products here. Nextron provides customizing your
+              products option for free. It is so popular that it's used by 9.83B
+              Humans and 1.27B Aliens.
+            </p>
+            {/* <button className="btn btn-primary">Get Started</button> */}
+            <Link
+              to="/about"
+              data-mdb-ripple="true"
+              data-mdb-ripple-color="white"
+              className="text-white bg-darkBlue p-5 rounded-2xl md:ml-48 shadow-lg  hover:text-gray-300 transition-all"
+            >
+              Learn More
+            </Link>
+          </div>
         </div>
-      </div>
-      <div className="md:pt-12 pt-0">
-        <img
-          src={person}
-          className=" w-2/3 md:w-full lg:animate-wiggle rounded-lg  mx-auto xl:mr-24 md:max-w-sm"
-          alt=""
-        />
       </div>
     </div>
   );

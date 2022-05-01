@@ -1,16 +1,16 @@
 import React from "react";
 import Header from "../../components/Banner/Banner";
-import Banner from "../../components/Stats/States";
-import Services from "../../components/Services/Services";
-import Skills from "../../components/Skills/Skills";
+import Stats from "../../components/Stats/States";
+// import Products from "../../components/Products/Products";
+// import Skills from "../../components/Skills/Skills";
 
 const Home = () => {
   return (
     <div>
       <Header></Header>
-      <Banner></Banner>
-      <Services></Services>
-      <Skills></Skills>
+      <Stats></Stats>
+      {/* <Products></Products>
+      <Skills></Skills> */}
     </div>
   );
 };
