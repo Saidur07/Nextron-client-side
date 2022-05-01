@@ -15,7 +15,7 @@ const Stats = () => {
         <div className="grid grid-cols-2 row-gap-8 md:grid-cols-4">
           <div className="text-center border-b  pb-3 mx-2 md:border-b-0 md:mx-0  md:border-r">
             <h6 className="text-4xl font-bold lg:text-5xl xl:text-6xl text-slate-50">
-              11B{" "}
+              11B
             </h6>
             <p className="text-sm font-medium tracking-widest text-gray-100 uppercase lg:text-base">
               Users
