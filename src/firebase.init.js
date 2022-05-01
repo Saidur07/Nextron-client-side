@@ -6,12 +6,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCP9DaPS_89UVnVftQdbNSQjA8PBQneKFg",
-  authDomain: "nextron-123.firebaseapp.com",
-  projectId: "nextron-123",
-  storageBucket: "nextron-123.appspot.com",
-  messagingSenderId: "397253771567",
-  appId: "1:397253771567:web:7ab5efa4dceaf3bf63a1da",
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase

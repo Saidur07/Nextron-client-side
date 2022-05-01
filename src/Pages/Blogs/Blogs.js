@@ -10,7 +10,7 @@ const Blogs = () => {
       </h1>
       <hr className="w-2/3 md:w-1/2 mx-auto border-white" />
       <div
-        className="accordion w-full px-2 md:w-1/2 mx-auto py-6 mt-12"
+        className="accordion w-full px-4 md:w-1/2 mx-auto py-6 mt-12"
         id="accordionExample"
       >
         <div className="accordion-item bg-white border border-gray-200">
@@ -86,6 +86,7 @@ const Blogs = () => {
             </div>
           </div>
         </div>
+
         <div className="accordion-item bg-white border border-gray-200">
           <h2 className="accordion-header mb-0" id="headingTwo">
             <button
@@ -118,81 +119,6 @@ const Blogs = () => {
             id="collapseTwo"
             className="accordion-collapse collapse"
             aria-labelledby="headingTwo"
-            data-bs-parent="#accordionExample"
-          >
-            <div className="accordion-body py-4 px-5">
-              <div className="p-6 shadow-lg rounded-lg bg-gray-100 text-gray-700">
-                <h2 className="font-semibold text-3xl mb-5">
-                  When should you use nodejs and when should you use mongodb?
-                </h2>
-                <div className="tags flex justify-center items-center my-4">
-                  <span className="px-4 py-2 rounded-full text-gray-800 bg-gray-200 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-gray-300 transition duration-300 ease mx-2">
-                    NodeJS
-                  </span>
-                  <span className="px-4 py-2 rounded-full text-gray-800 bg-gray-200 font-semibold text-sm flex align-center w-max cursor-pointer active:bg-gray-300 transition duration-300 ease mx-2">
-                    MongoDB
-                  </span>
-                </div>
-                <p>
-                  Both Nodejs and MongoDB is amazing in there own fields. Node
-                  is used for backend purposes and Mongo is used for NoSQL
-                  databases.
-                </p>
-                <hr className="my-6 border-gray-300" />
-                <p>
-                  Node JS has become one of the most popular languages
-                  developers use in recent years due to its ease of use,
-                  scalability, and connectivity. It is used to build scalable
-                  back-end applications for websites and real-time communication
-                  systems. Node JS users find it easier to maintain code which
-                  reduces the chances of errors - all these reasons prove why
-                  this particular language is at the forefront of modern
-                  development.
-                </p>
-                <hr className="my-6 border-gray-300" />
-                <p>
-                  NoSQL databases like MongoDB are a good choice when your data
-                  is document-centric and doesn't fit well into the schema of a
-                  relational database, when you need to accommodate massive
-                  scale, when you are rapidly prototyping, and a few other use
-                  cases.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div className="accordion-item bg-white border border-gray-200">
-          <h2 className="accordion-header mb-0" id="headingThree">
-            <button
-              className="
-        accordion-button
-        collapsed
-        relative
-        flex
-        items-center
-        w-full
-        py-4
-        px-5
-        text-base text-gray-800 text-left
-        bg-white
-        border-0
-        rounded-none
-        transition
-        focus:outline-none
-      "
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#collapseThree"
-              aria-expanded="false"
-              aria-controls="collapseThree"
-            >
-              Question #3
-            </button>
-          </h2>
-          <div
-            id="collapseThree"
-            className="accordion-collapse collapse"
-            aria-labelledby="headingThree"
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body py-4 px-5">
@@ -272,7 +198,7 @@ const Blogs = () => {
           </div>
         </div>
         <div className="accordion-item bg-white border border-gray-200">
-          <h2 className="accordion-header mb-0" id="headingFour">
+          <h2 className="accordion-header mb-0" id="headingThree">
             <button
               className="
         accordion-button
@@ -292,17 +218,17 @@ const Blogs = () => {
       "
               type="button"
               data-bs-toggle="collapse"
-              data-bs-target="#collapseFour"
+              data-bs-target="#collapseThree"
               aria-expanded="false"
-              aria-controls="collapseFour"
+              aria-controls="collapseThree"
             >
-              Question #4
+              Question #3
             </button>
           </h2>
           <div
-            id="collapseFour"
+            id="collapseThree"
             className="accordion-collapse collapse"
-            aria-labelledby="headingFour"
+            aria-labelledby="headingThree"
             data-bs-parent="#accordionExample"
           >
             <div className="accordion-body py-4 px-5">

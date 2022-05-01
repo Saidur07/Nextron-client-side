@@ -1,5 +1,4 @@
 import React from "react";
-import CountUp from "react-countup";
 import arrows from "../../assets/images/arrows.gif";
 const Stats = () => {
   return (
@@ -16,13 +15,7 @@ const Stats = () => {
         <div className="grid grid-cols-2 row-gap-8 md:grid-cols-4">
           <div className="text-center border-b  pb-3 mx-2 md:border-b-0 md:mx-0  md:border-r">
             <h6 className="text-4xl font-bold lg:text-5xl xl:text-6xl text-slate-50">
-              <CountUp start={0} end={11} duration={1}>
-                {({ countUpRef }) => (
-                  <div>
-                    <span ref={countUpRef} />B
-                  </div>
-                )}
-              </CountUp>
+              11B{" "}
             </h6>
             <p className="text-sm font-medium tracking-widest text-gray-100 uppercase lg:text-base">
               Users
@@ -30,13 +23,7 @@ const Stats = () => {
           </div>
           <div className="text-center border-b  pb-3 mx-2 md:border-b-0 md:mx-0  md:border-r">
             <h6 className="text-4xl font-bold lg:text-5xl xl:text-6xl text-slate-50">
-              <CountUp start={0} end={9} duration={1}>
-                {({ countUpRef }) => (
-                  <div>
-                    <span ref={countUpRef} />B
-                  </div>
-                )}
-              </CountUp>
+              9.2B{" "}
             </h6>
             <p className="text-sm font-medium tracking-widest text-gray-100 uppercase lg:text-base">
               Humans
@@ -44,13 +31,7 @@ const Stats = () => {
           </div>
           <div className="text-center border-b  pb-3 mx-2 md:border-b-0 md:mx-0  md:border-r">
             <h6 className="text-4xl font-bold lg:text-5xl xl:text-6xl text-slate-50">
-              <CountUp start={0} end={2} duration={1}>
-                {({ countUpRef }) => (
-                  <div>
-                    <span ref={countUpRef} />B
-                  </div>
-                )}
-              </CountUp>
+              1.8B{" "}
             </h6>
             <p className="text-sm font-medium tracking-widest text-gray-100 uppercase lg:text-base">
               Aliens
@@ -58,13 +39,7 @@ const Stats = () => {
           </div>
           <div className="text-center border-b pb-3 mx-2 md:border-b-0 md:mx-0  ">
             <h6 className="text-4xl font-bold lg:text-5xl xl:text-6xl text-slate-50">
-              <CountUp start={0} end={150} duration={1}>
-                {({ countUpRef }) => (
-                  <div>
-                    <span ref={countUpRef} />K
-                  </div>
-                )}
-              </CountUp>
+              88k
             </h6>
             <p className="text-sm font-medium tracking-widest text-gray-100 uppercase lg:text-base">
               Sellers

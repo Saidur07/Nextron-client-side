@@ -11,7 +11,7 @@ const Contact = () => {
       toast.warn("Please log in first!!");
       return;
     }
-    toast.success("Ye! your email sent. (lies 🙊)");
+    toast.success("Ye! Your email sent!! (lies 🙊)");
   };
 
   return (

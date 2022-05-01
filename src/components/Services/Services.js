@@ -5,37 +5,37 @@ const Services = () => {
     {
       id: 1,
       title: "Thunder Server",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum delectus asperiores perspiciatis provident distinctio error quis, commodi molestias adipisci, illum suscipit, placeat consequatur illo doloribus quaerat similique recusandae aperiam repellat.",
+      desc: "We have the fastest server in the world! You can easily download or upload any files to the server like thunder.",
       img: "https://i.ibb.co/BnNfxpC/550-5504898-lightning-bolt-thunder-png-clipart-removebg-preview.png",
     },
     {
       id: 2,
       title: "Rocket like Delivery",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum delectus asperiores perspiciatis provident distinctio error quis, commodi molestias adipisci, illum suscipit, placeat consequatur illo doloribus quaerat similique recusandae aperiam repellat.",
+      desc: "We promise you to deliver the products that you want withing hours. It doesn't matter wherever you're, Earth or Mars or the Sun.",
       img: "https://i.ibb.co/qd1VWB8/images-removebg-preview.png",
     },
     {
       id: 3,
       title: "Invincible Security",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum delectus asperiores perspiciatis provident distinctio error quis, commodi molestias adipisci, illum suscipit, placeat consequatur illo doloribus quaerat similique recusandae aperiam repellat.",
+      desc: "The most securest door in the universe. Hacker's fathers or dads don't have the power to crack it. Give your passwords to us, and go to sleep.",
       img: "https://i.ibb.co/BTFHzVv/2454556-removebg-preview.png",
     },
     {
       id: 4,
       title: "Infinity Support",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum delectus asperiores perspiciatis provident distinctio error quis, commodi molestias adipisci, illum suscipit, placeat consequatur illo doloribus quaerat similique recusandae aperiam repellat.",
+      desc: "You can easily contact with us and get the support. We only live for giving you the best support. Its our responsibility not yours.",
       img: "https://i.ibb.co/qDQSptb/207-2071237-customer-service-icon-customer-service-flat-icon-png-removebg-preview.png",
     },
     {
       id: 5,
       title: "Most Profitable Deals",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum delectus asperiores perspiciatis provident distinctio error quis, commodi molestias adipisci, illum suscipit, placeat consequatur illo doloribus quaerat similique recusandae aperiam repellat.",
+      desc: "You will find the most profitable deal for you here. Just go and watch the deals. We will take all your money at night.",
       img: "https://i.ibb.co/16H2q02/5221076-removebg-preview.png",
     },
     {
       id: 6,
       title: "Planet to Planet",
-      desc: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum delectus asperiores perspiciatis provident distinctio error quis, commodi molestias adipisci, illum suscipit, placeat consequatur illo doloribus quaerat similique recusandae aperiam repellat.",
+      desc: "Our service is available on every planet of every Galaxy. It doesn't matter who you are, Human or Alien. You will instantly get your desired product.",
       img: "https://i.ibb.co/Mn74YZr/1024px-Archlinux-icon-crystal-64-svg-removebg-preview.png",
     },
   ];
