@@ -1,12 +1,12 @@
 import React from "react";
 import CountUp from "react-countup";
+import arrows from "../../assets/images/arrows.gif";
 const Stats = () => {
   return (
     <div
       className=""
       style={{
-        backgroundImage:
-          "url(https://cdn.dribbble.com/users/823352/screenshots/2927297/bleu-rose-0.1.gif)",
+        backgroundImage: `url(${arrows})`,
         backgroundRepeat: "no-repeat",
         backgroundAttachment: "fixed",
         backgroundSize: "cover",
@@ -16,7 +16,7 @@ const Stats = () => {
         <div className="grid grid-cols-2 row-gap-8 md:grid-cols-4">
           <div className="text-center border-b  pb-3 mx-2 md:border-b-0 md:mx-0  md:border-r">
             <h6 className="text-4xl font-bold lg:text-5xl xl:text-6xl text-slate-50">
-              <CountUp start={0} end={11} delay={1} duration={1}>
+              <CountUp start={0} end={11} duration={1}>
                 {({ countUpRef }) => (
                   <div>
                     <span ref={countUpRef} />B
@@ -30,7 +30,7 @@ const Stats = () => {
           </div>
           <div className="text-center border-b  pb-3 mx-2 md:border-b-0 md:mx-0  md:border-r">
             <h6 className="text-4xl font-bold lg:text-5xl xl:text-6xl text-slate-50">
-              <CountUp start={0} end={9} delay={1} duration={1}>
+              <CountUp start={0} end={9} duration={1}>
                 {({ countUpRef }) => (
                   <div>
                     <span ref={countUpRef} />B
@@ -44,7 +44,7 @@ const Stats = () => {
           </div>
           <div className="text-center border-b  pb-3 mx-2 md:border-b-0 md:mx-0  md:border-r">
             <h6 className="text-4xl font-bold lg:text-5xl xl:text-6xl text-slate-50">
-              <CountUp start={0} end={2} delay={1} duration={1}>
+              <CountUp start={0} end={2} duration={1}>
                 {({ countUpRef }) => (
                   <div>
                     <span ref={countUpRef} />B
@@ -58,7 +58,7 @@ const Stats = () => {
           </div>
           <div className="text-center border-b pb-3 mx-2 md:border-b-0 md:mx-0  ">
             <h6 className="text-4xl font-bold lg:text-5xl xl:text-6xl text-slate-50">
-              <CountUp start={0} end={150} delay={1} duration={1}>
+              <CountUp start={0} end={150} duration={1}>
                 {({ countUpRef }) => (
                   <div>
                     <span ref={countUpRef} />K
