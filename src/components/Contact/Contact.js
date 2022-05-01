@@ -9,13 +9,14 @@ const Contact = () => {
     e.preventDefault();
     if (!user) {
       toast.warn("Please log in first!!");
+      return;
     }
     toast.success("Ye! your email sent. (lies 🙊)");
   };
 
   return (
     <div>
-      <section className="bg-darki py-20 lg:py-[120px] overflow-hidden relative ">
+      <section className="bg-darki py-20 lg:py-[120px] overflow-hidden relative px-4 lg:px-0">
         <div className="container mx-auto">
           <div className="flex flex-wrap lg:justify-evenly -mx-4">
             <div className="w-full lg:w-1/2 xl:w-6/12 px-4">

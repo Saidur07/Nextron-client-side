@@ -48,7 +48,7 @@ const Login = () => {
       <h1 className="md:text-5xl text-3xl text-center py-8 text-gray-300">
         HEY! LOGIN!!
       </h1>
-      <hr className="container mx-auto w-full lg:w-1/2" />
+      <hr className="container mx-auto w-full lg:w-1/3" />
       <form onSubmit={handleSubmit} className="container mx-auto md:w-2/5 mt-8">
         <div className="mb-6 w-3/4 mx-auto md:w-full">
           <label

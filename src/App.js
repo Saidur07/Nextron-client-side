@@ -11,7 +11,6 @@ import NotFound from "./Pages/NotFound/NotFound";
 import RequireAuth from "./components/Shared/RequireAuth/RequireAuth";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Products from "./Pages/Products/Products";
 import Checkout from "./Pages/Checkout/Checkout";
 
 function App() {
@@ -29,7 +28,6 @@ function App() {
             </RequireAuth>
           }
         ></Route>
-        <Route path="/products" element={<Products></Products>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/about" element={<About></About>}></Route>
         <Route path="/login" element={<Login></Login>}></Route>

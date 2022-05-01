@@ -1,6 +1,6 @@
 import React from "react";
 import { toast } from "react-toastify";
-import graphic from "../../assets/images/graphic.jpg";
+import graphic from "../../assets/images/bubbles.jpg";
 const Checkout = () => {
   const formSubmit = (e) => {
     e.preventDefault();
