@@ -40,7 +40,7 @@ const Newsletter = () => {
           />
           <input
             data-mdb-ripple="true"
-            data-mdb-ripple-color="dark"
+            data-mdb-ripple-color="white"
             type="submit"
             value="Subscribe"
             className="text-white bg-blue-600 cursor-pointer hover:bg-blue-700 md:mt-0 mt-4  focus:outline-none ml-6 font-medium rounded-lg text-md px-2 py-3 text-center block mx-auto w-1/2 active:scale-x-75"

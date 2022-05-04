@@ -2,7 +2,7 @@
   { "id": 1, "name": "Home", "to": "/" },
   { "id": 2, "name": "Products", "to": "/products" },
   { "id": 3, "name": "Add Products", "to": "/products" },
-  { "id": 4, "name": "My Products", "to": "/products" },
+  { "id": 4, "name": "My Products", "to": "/myproducts" },
   { "id": 5, "name": "Blogs", "to": "/blogs" },
   { "id": 6, "name": "About", "to": "/about" }
 ]

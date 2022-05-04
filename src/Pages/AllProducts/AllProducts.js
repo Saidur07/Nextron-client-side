@@ -35,7 +35,7 @@ const AllProducts = () => {
           {products.map((product) => (
             <div
               className="w-full md:w-1/2 xl:w-1/3 px-3  transition-all"
-              key={product.id}
+              key={product._id}
             >
               <div className="bg-[#001d3d] rounded-lg overflow-hidden mb-10">
                 <img
@@ -70,6 +70,15 @@ const AllProducts = () => {
                              mb-4
                              "
                     >
+                      Price :{" "}
+                      <span className="text-green-300">${product.price}</span>
+                    </p>
+                    <p
+                      className="font-medium
+                             text-white text-lg
+                             mb-4
+                             "
+                    >
                       Supplier :{" "}
                       <span className="text-cyan-300">{product.supplier}</span>
                     </p>
@@ -80,26 +89,27 @@ const AllProducts = () => {
                              "
                     >
                       Quantity :{" "}
-                      <span className="text-green-300">{product.quantity}</span>
+                      <span className="text-yellow-300">
+                        {product.quantity}
+                      </span>
                     </p>
                   </div>
                   <div className="flex ">
                     <Link
-                      to="/"
+                      to={"/product/" + product._id}
                       data-mdb-ripple="true"
-                      data-mdb-ripple-color="dark"
+                      data-mdb-ripple-color="white"
                       className=" py-3 px-10 w-full lg:px-8 xl:px-10 inline-flex items-center justify-center text-center text-slate-700 font-semibold text-base bg-[#64dfdf] rounded-lg hover:bg-opacity-90 mx-2"
                     >
                       Update
                     </Link>
-                    <Link
-                      to="/"
+                    <button
                       data-mdb-ripple="true"
-                      data-mdb-ripple-color="dark"
+                      data-mdb-ripple-color="white"
                       className=" py-3 px-10 w-full lg:px-8 xl:px-10 inline-flex items-center justify-center text-center text-slate-100 font-semibold text-base bg-[#c9184a] rounded-lg hover:bg-opacity-90 mx-2"
                     >
                       Delete
-                    </Link>
+                    </button>
                   </div>
                 </div>
               </div>

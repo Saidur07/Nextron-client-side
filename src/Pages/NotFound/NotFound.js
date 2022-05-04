@@ -47,7 +47,7 @@ const NotFound = () => {
         <div className="flex items-center justify-center">
           <Link
             data-mdb-ripple="true"
-            data-mdb-ripple-color="dark"
+            data-mdb-ripple-color="white"
             to="/"
             type="button"
             className=" my-6 inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-gray-700 hover:bg-gray-600 focus:shadow-outline focus:outline-none active:scale-90"

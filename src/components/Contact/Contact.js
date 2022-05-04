@@ -197,7 +197,7 @@ const Contact = () => {
                   <div>
                     <button
                       data-mdb-ripple="true"
-                      data-mdb-ripple-color="dark"
+                      data-mdb-ripple-color="white"
                       type="submit"
                       className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-gray-700 hover:bg-gray-600 focus:shadow-outline focus:outline-none active:scale-90"
                     >

@@ -54,7 +54,7 @@ const Social = () => {
       <div className="">
         <button
           data-mdb-ripple="true"
-          data-mdb-ripple-color="dark"
+          data-mdb-ripple-color="white"
           onClick={() => signInWithGoogle()}
           className=" bg-gray-100 hover:bg-gray-200 transition-all rounded-xl w-4/5 md:w-5/6 xl:w-2/3 flex justify-center items-center h-12 mx-auto my-8 "
         >
@@ -65,7 +65,7 @@ const Social = () => {
         </button>
         <button
           data-mdb-ripple="true"
-          data-mdb-ripple-color="dark"
+          data-mdb-ripple-color="white"
           onClick={() => signInWithFacebook()}
           className=" bg-blue-400 hover:bg-blue-500 transition-all rounded-xl w-4/5 md:w-5/6 xl:w-2/3 flex justify-center items-center h-12 mx-auto my-8 "
         >
@@ -76,7 +76,7 @@ const Social = () => {
         </button>
         <button
           data-mdb-ripple="true"
-          data-mdb-ripple-color="dark"
+          data-mdb-ripple-color="white"
           onClick={() => signInWithGithub()}
           className=" bg-slate-300 hover:bg-slate-200 transition-all rounded-xl w-4/5 md:w-5/6 xl:w-2/3 flex justify-center items-center h-12 mx-auto my-8 "
         >

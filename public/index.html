@@ -39,7 +39,7 @@
     border: 8px solid #00ffdda6;
     border-radius: 50px;
     position: relative;
-    margin: 10vh auto;
+    margin: 40vh auto;
   }
 
   .loader span {
@@ -98,43 +98,15 @@
       margin-left: 45%;
     }
   }
-
-  .this {
-    font-size: 10em;
-    color: white;
-    animation: text1 .4s linear forwards;
-  }
-
-  @keyframes text1 {
-    from {
-      margin-left: 0;
-      margin-top: -50%;
-      font-family: 'Courier New', Courier, monospace;
-      font-stretch: condensed;
-    }
-
-    to {
-      margin-left: 50%;
-      margin-top: 0%;
-      transform: translateX(-50%);
-      letter-spacing: 50px;
-      font-family: 'Times New Roman', Times, serif;
-    }
-  }
 </style>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root">
-    <div>
-      <div class="loader">
-        <span class="hour"></span>
-        <span class="min"></span>
-        <span class="circel"></span>
-      </div>
-      <div>
-        <h1 class="this">NEXTRON! </h1>
-      </div>
+    <div class="loader">
+      <span class="hour"></span>
+      <span class="min"></span>
+      <span class="circel"></span>
     </div>
   </div>
   <!--

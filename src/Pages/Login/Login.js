@@ -95,7 +95,7 @@ const Login = () => {
             Forgot Password?{" "}
             <button
               data-mdb-ripple="true"
-              data-mdb-ripple-color="dark"
+              data-mdb-ripple-color="white"
               onClick={resetPassword}
               className="text-sky-500 hover:tracking-widest transition-all hover:scale-x-105 hover:ml-1 "
             >
@@ -107,7 +107,7 @@ const Login = () => {
 
         <button
           data-mdb-ripple="true"
-          data-mdb-ripple-color="dark"
+          data-mdb-ripple-color="white"
           type="submit"
           className="text-white bg-blue-600 hover:bg-blue-700 focus:outline-none  font-medium rounded-lg text-md px-5 py-4 text-center block mx-auto w-1/2"
         >

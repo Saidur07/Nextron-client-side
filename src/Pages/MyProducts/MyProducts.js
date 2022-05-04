@@ -2,17 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
 
-const Products = () => {
+const MyProducts = () => {
   const [products] = useProducts();
   return (
     <div>
-      <section className="bg-darka pt-20 lg:pt-[120px] pb-12 lg:pb-[90px] px-4 lg:px-0">
+      <section className="bg-realBlack pt-4 px-4 lg:px-0">
         <div className="container mx-auto">
           <div className="flex flex-wrap -mx-4">
             <div className="w-full px-4">
               <div className="text-center mx-auto mb-12 lg:mb-20 max-w-[510px]">
                 <span className="font-semibold text-lg text-sky-400 mb-2 block">
-                  Our Products
+                  Your Products
                 </span>
                 <h2
                   className="
@@ -27,7 +27,7 @@ const Products = () => {
                   Products in the Warehouse
                 </h2>
                 <p className="text-base text-slate-200">
-                  There are some of the products from nextron warehouse.
+                  There are some of the products provided by you.
                 </p>
               </div>
             </div>
@@ -35,10 +35,10 @@ const Products = () => {
 
           <div className="container">
             <div className="flex flex-wrap -mx-4">
-              {products.slice(2, 8).map((product) => (
+              {products.slice(4, 7).map((product) => (
                 <div
                   className="w-full md:w-1/2 xl:w-1/3 px-3  transition-all"
-                  key={product._id}
+                  key={product.id}
                 >
                   <div className="bg-[#001d3d] rounded-lg overflow-hidden mb-10">
                     <img
@@ -101,26 +101,27 @@ const Products = () => {
                           </span>
                         </p>
                       </div>
-                      <Link
-                        to={"/product/" + product._id}
-                        data-mdb-ripple="true"
-                        data-mdb-ripple-color="white"
-                        className=" py-3 px-10 w-full lg:px-8 xl:px-10 inline-flex items-center justify-center text-center text-slate-700 font-semibold text-base bg-[#64dfdf] rounded-lg hover:bg-opacity-90"
-                      >
-                        Update
-                      </Link>
+                      <div className="flex">
+                        <Link
+                          to="/"
+                          data-mdb-ripple="true"
+                          data-mdb-ripple-color="white"
+                          className=" py-3 px-10 w-full lg:px-8 xl:px-10 inline-flex items-center justify-center text-center text-slate-700 font-semibold text-base bg-[#64dfdf] rounded-lg hover:bg-opacity-90"
+                        >
+                          Update
+                        </Link>
+                        <button
+                          data-mdb-ripple="true"
+                          data-mdb-ripple-color="white"
+                          className=" py-3 px-10 w-full lg:px-8 xl:px-10 inline-flex items-center justify-center text-center text-slate-100 font-semibold text-base bg-[#c9184a] rounded-lg hover:bg-opacity-90 mx-2"
+                        >
+                          Delete
+                        </button>
+                      </div>
                     </div>
                   </div>
                 </div>
               ))}
-              <Link
-                to="/products"
-                className="w-2/3 mx-auto inline-flex items-center justify-center h-12 px-6 font-medium text-gray-100 transition duration-200 rounded shadow-md bg-darki border-0 hover:bg-opacity-75 focus:shadow-outline focus:outline-none active:scale-90 text-xl tracking-wider"
-                data-mdb-ripple="true"
-                data-mdb-ripple-color="white"
-              >
-                Manage Products
-              </Link>
             </div>
           </div>
         </div>
@@ -129,4 +130,4 @@ const Products = () => {
   );
 };
 
-export default Products;
+export default MyProducts;

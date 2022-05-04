@@ -76,7 +76,7 @@ const Navbar = () => {
             {user ? (
               <button
                 data-mdb-ripple="true"
-                data-mdb-ripple-color="dark"
+                data-mdb-ripple-color="white"
                 onClick={handleSignOut}
                 type="button"
                 className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-gray-700 hover:bg-gray-600 focus:shadow-outline focus:outline-none active:scale-90"
@@ -88,7 +88,7 @@ const Navbar = () => {
                 to={"/login"}
                 type="button"
                 data-mdb-ripple="true"
-                data-mdb-ripple-color="dark"
+                data-mdb-ripple-color="white"
                 className="inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-gray-600 hover:bg-gray-600 focus:shadow-outline focus:outline-none active:scale-90"
               >
                 {" "}
@@ -100,7 +100,7 @@ const Navbar = () => {
         <div className="lg:hidden">
           <button
             data-mdb-ripple="true"
-            data-mdb-ripple-color="dark"
+            data-mdb-ripple-color="white"
             aria-label="Open Menu"
             title="Open Menu"
             className="p-2 -mr-1 transition duration-200 rounded"
@@ -136,7 +136,7 @@ const Navbar = () => {
                   <div>
                     <button
                       data-mdb-ripple="true"
-                      data-mdb-ripple-color="dark"
+                      data-mdb-ripple-color="white"
                       aria-label="Close Menu"
                       title="Close Menu"
                       className="p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline "
@@ -204,7 +204,7 @@ const Navbar = () => {
                       {user ? (
                         <button
                           data-mdb-ripple="true"
-                          data-mdb-ripple-color="dark"
+                          data-mdb-ripple-color="white"
                           onClick={handleSignOut}
                           className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-gray-600 hover:bg-gray-500 focus:shadow-outline focus:outline-none"
                         >
