@@ -27,11 +27,11 @@ const Loader = () => {
             fill="none"
             // stroke="hsl(3,90%,55%)"
             stroke="#64dfdf"
-            stroke-width="8"
+            strokeWidth="8"
             transform="rotate(-90,64,64)"
-            stroke-linecap="round"
-            stroke-dasharray="377 377"
-            stroke-dashoffset="-376.4"
+            strokeLinecap="round"
+            strokeDasharray="377 377"
+            strokeDashoffset="-376.4"
           ></circle>
           <circle
             className="pl__ring2"
@@ -41,11 +41,11 @@ const Loader = () => {
             fill="none"
             // stroke="hsl(13,90%,55%)"
             stroke="#ff4d6d"
-            stroke-width="7"
+            strokeWidth="7"
             transform="rotate(-90,64,64)"
-            stroke-linecap="round"
-            stroke-dasharray="329.9 329.9"
-            stroke-dashoffset="-329.3"
+            strokeLinecap="round"
+            strokeDasharray="329.9 329.9"
+            strokeDashoffset="-329.3"
           ></circle>
           <circle
             className="pl__ring3"
@@ -55,11 +55,11 @@ const Loader = () => {
             fill="none"
             // stroke="hsl(23,90%,55%)"
             stroke="#90e0ef"
-            stroke-width="6"
+            strokeWidth="6"
             transform="rotate(-90,64,64)"
-            stroke-linecap="round"
-            stroke-dasharray="289 289"
-            stroke-dashoffset="-288.6"
+            strokeLinecap="round"
+            strokeDasharray="289 289"
+            strokeDashoffset="-288.6"
           ></circle>
           <circle
             className="pl__ring4"
@@ -69,11 +69,11 @@ const Loader = () => {
             fill="none"
             // stroke="hsl(33,90%,55%)"
             stroke="#f694c1"
-            stroke-width="5"
+            strokeWidth="5"
             transform="rotate(-90,64,64)"
-            stroke-linecap="round"
-            stroke-dasharray="254.5 254.5"
-            stroke-dashoffset="-254"
+            strokeLinecap="round"
+            strokeDasharray="254.5 254.5"
+            strokeDashoffset="-254"
           ></circle>
           <circle
             className="pl__ring5"
@@ -83,11 +83,11 @@ const Loader = () => {
             fill="none"
             // stroke="hsl(43,90%,55%)"
             stroke="#e2afff"
-            stroke-width="4"
+            strokeWidth="4"
             transform="rotate(-90,64,64)"
-            stroke-linecap="round"
-            stroke-dasharray="226.2 226.2"
-            stroke-dashoffset="-225.8"
+            strokeLinecap="round"
+            strokeDasharray="226.2 226.2"
+            strokeDashoffset="-225.8"
           ></circle>
           <circle
             className="pl__ring6"
@@ -97,11 +97,11 @@ const Loader = () => {
             fill="none"
             // stroke="hsl(53,90%,55%)"
             stroke="#f38375"
-            stroke-width="3"
+            strokeWidth="3"
             transform="rotate(-90,64,64)"
-            stroke-linecap="round"
-            stroke-dasharray="204.2 204.2"
-            stroke-dashoffset="-203.9"
+            strokeLinecap="round"
+            strokeDasharray="204.2 204.2"
+            strokeDashoffset="-203.9"
           ></circle>
         </svg>
       </div>

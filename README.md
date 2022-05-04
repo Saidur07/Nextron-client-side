@@ -2,7 +2,7 @@
 
 Live Site Link : [https://nextron-123.web.app](https://nextron-123.web.app)
 
-Nextron is a electrical warehouse. You can buy or add products to the site.
+Nextron is a electrical warehouse. You can add products to the site.
 
 ## Website features
 

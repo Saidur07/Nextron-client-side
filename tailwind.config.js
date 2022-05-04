@@ -10,8 +10,9 @@ module.exports = {
       colors: {
         realBlack: "#2b2d42",
         darkBlue: "#001845",
-        darku: "#023047",
-        darki: "#203354",
+        darka: "#023047",
+        darku: "#203354",
+        darki: "#013560",
       },
       keyframes: {
         wiggle: {

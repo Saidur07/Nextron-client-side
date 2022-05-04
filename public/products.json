@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "title": "Graphic Designing Course",
+    "name": "Graphic Designing Course",
     "description": "Graphic design is a craft where professionals create visual content to communicate messages. By applying visual hierarchy and page layout techniques, designers use typography and pictures to meet users’ specific needs and focus on the logic of displaying elements in interactive designs, to optimize the user experience.",
     "price": 120,
     "img": "https://i.pinimg.com/236x/20/9f/be/209fbe1e9e75abc24c6e2e51b22440ed--graphic-art-graphic-studio.jpg",
@@ -11,7 +11,7 @@
   },
   {
     "id": 2,
-    "title": "Video Editing",
+    "name": "Video Editing",
     "description": "Video editing is the process of editing segments of motion video production footage, special effects and sound recordings in the post-production process. Motion picture film editing is a predecessor to video editing and, in several ways, video editing simulates motion picture film editing, in theory and the use of linear video editing and video editing software on  NLE.  It is a visual art",
     "price": 150,
     "img": "https://images.unsplash.com/photo-1574717025058-2f8737d2e2b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlkZW8lMjBlZGl0aW5nfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
@@ -21,7 +21,7 @@
   },
   {
     "id": 3,
-    "title": "Digital Marketing",
+    "name": "Digital Marketing",
     "description": "Any marketing that uses electronic devices and can be used by marketing specialists to convey promotional messaging and measure its impact through your customer journey. In practice, digital marketing typically refers to marketing campaigns that appear on a computer, phone, tablet, or other device.  ",
     "price": 170,
     "img": "https://www.lcmtlondon.com/wp-content/uploads/2020/03/digital-marketting.jpg",
@@ -31,7 +31,7 @@
   },
   {
     "id": 4,
-    "title": "Game Development",
+    "name": "Game Development",
     "description": "Game Development is the art of creating games and describes the design, development and release of a game. It may involve concept generation, design, build, test and release. While you create a game, it is important to think about the game mechanics, rewards, player engagement and level design.",
     "price": 200,
     "img": "https://media.istockphoto.com/vectors/game-dev-isometric-concept-education-of-creation-3d-design-of-or-vector-id1297564630?k=20&m=1297564630&s=612x612&w=0&h=QenkclbeLXqD7NHYdVoBrm3_T4u16fg86CTGMNGdSHQ=",
@@ -41,7 +41,7 @@
   },
   {
     "id": 5,
-    "title": "App Development",
+    "name": "App Development",
     "description": "app development is the process in which developers create an application to be used on smartphones, tablets and other mobile devices. While app development sometimes involves creating a web-based app or a desktop version of the app, the majority of app development projects are deployed to mobile and tablet devices. ",
     "price": 100,
     "img": "https://www.sysconsolution.com/uploads/topics/16366178761886.jpg",
@@ -51,8 +51,8 @@
   },
   {
     "id": 6,
-    "title": "Web Development",
-    "description": "Web development is the work involved in developing a website for the Internet (World Wide Web) or an intranet (a private network). Web development can range from developing a simple single static page of plain text to complex web applications, electronic businesses, and social network services. A more comprehensive list of tasks to which Web development commonly refers, may include Web engineering, Web design, Web content development, client liaison, client-side/server-side scripting, Web server and network security configuration, and e-commerce development.",
+    "name": "Web Development",
+    "description": "Web development is the work involved in developing a website for the Internet (World Wide Web) or an intranet (a private network). Web development can range from developing a simple single static page of plain text to complex web applications, electronic businesses, and social network services. A more comprehensive list of tasks to which Web development commonly refers.",
     "price": 90,
     "img": "https://www.onlinecoursereport.com/wp-content/uploads/2020/07/shutterstock_394793860-1024x784.jpg",
     "quantity": 3,
@@ -61,8 +61,8 @@
   },
   {
     "id": 7,
-    "title": "Machine Learning",
-    "description": "Machine learning is a branch of artificial intelligence (AI) and computer science which focuses on the use of data and algorithms to imitate the way that humans learn, gradually improving its accuracy.",
+    "name": "Machine Learning",
+    "description": "Machine learning is a branch of artificial intelligence (AI) and computer science which focuses on the use of data and algorithms to imitate the way that humans learn, gradually improving its accuracy. Computer science which focuses on the use of data and algorithms to imitate the way that humans learn, gradually improving its accuracy.",
     "price": 220,
     "img": "https://miro.medium.com/max/1400/1*c_fiB-YgbnMl6nntYGBMHQ.jpeg",
     "quantity": 3,
@@ -71,9 +71,12 @@
   },
   {
     "id": 8,
-    "title": "Cyber Securities and Ethical Hacking",
+    "name": "Cyber Securities and Ethical Hacking",
     "description": "Ethical hacking involves an authorized attempt to gain unauthorized access to a computer system, application, or data. Carrying out an ethical hack involves duplicating strategies and actions of malicious attackers. This practice helps to identify security vulnerabilities which can then be resolved before a malicious attacker has the opportunity to exploit them.",
     "price": 210,
-    "img": "https://media.istockphoto.com/photos/computer-system-hacked-warning-picture-id1144604245?b=1&k=20&m=1144604245&s=170667a&w=0&h=523A0-3Zyqf_4cvAnEx218td3HVt1BzCiQbFoeZVXT8="
+    "img": "https://media.istockphoto.com/photos/computer-system-hacked-warning-picture-id1144604245?b=1&k=20&m=1144604245&s=170667a&w=0&h=523A0-3Zyqf_4cvAnEx218td3HVt1BzCiQbFoeZVXT8=",
+    "quantity": 4,
+    "supplier": "IDK",
+    "sold": false
   }
 ]

@@ -23,7 +23,7 @@ const Header = () => {
             <h1 className="md:text-5xl text-4xl font-bold text-white font-sans tracking-widest md:italic sm:text-center">
               Nextron!
               <span>
-                <img src={logo} alt="" className="inline w-1/4" />
+                <img src={logo} alt="" className="inline w-1/5" />
               </span>
             </h1>
             <h3 className="md:text-3x text-2xl  font-bold text-slate-300 font-serif sm:text-center">
@@ -40,7 +40,7 @@ const Header = () => {
               to="/about"
               data-mdb-ripple="true"
               data-mdb-ripple-color="white"
-              className="text-white bg-darkBlue p-5 rounded-2xl md:ml-48 shadow-lg hover:text-gray-300 transition-all"
+              className="text-white bg-darkBlue p-5 rounded-xl md:ml-48 shadow-lg active:scale-90 hover:text-gray-300 transition-all"
             >
               Learn More
             </Link>

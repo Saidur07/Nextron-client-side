@@ -1,9 +1,8 @@
 [
   { "id": 1, "name": "Home", "to": "/" },
   { "id": 2, "name": "Products", "to": "/productsa" },
-  { "id": 3, "name": "Manage Products", "to": "/productsaa" },
-  { "id": 4, "name": "Add Products", "to": "/productsaaa" },
-  { "id": 5, "name": "My Products", "to": "/productsaaaa" },
-  { "id": 6, "name": "Blogs", "to": "/blogs" },
-  { "id": 7, "name": "About", "to": "/about" }
+  { "id": 3, "name": "Add Products", "to": "/productsaaa" },
+  { "id": 4, "name": "My Products", "to": "/productsaaaa" },
+  { "id": 5, "name": "Blogs", "to": "/blogs" },
+  { "id": 6, "name": "About", "to": "/about" }
 ]

@@ -11,7 +11,7 @@ const Services = () => {
     {
       id: 2,
       title: "Rocket like Delivery",
-      desc: "We promise you to deliver the products that you want withing hours. It doesn't matter wherever you're, Earth or Mars or the Sun.",
+      desc: "We promise you to take the products from you withing hours. It doesn't matter wherever you're, Earth or Mars or the Sun.",
       img: "https://i.ibb.co/qd1VWB8/images-removebg-preview.png",
     },
     {
