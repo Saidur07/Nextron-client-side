@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
 
 const Products = () => {
@@ -32,17 +33,22 @@ const Products = () => {
             </div>
           </div>
 
-          <div class="container">
-            <div class="flex flex-wrap -mx-4">
+          <div className="container">
+            <div className="flex flex-wrap -mx-4">
               {products.slice(2, 8).map((product) => (
-                <div class="w-full md:w-1/2 xl:w-1/3 px-3">
-                  <div class="bg-[#001d3d] rounded-lg overflow-hidden mb-10">
-                    <img src={product.img} class="w-full h-72" alt="" />
-                    <div class="p-8 sm:p-9 md:p-7 xl:p-9 ">
-                      <h3>
-                        <a
-                          href="/"
-                          class="
+                <div
+                  className="w-full md:w-1/2 xl:w-1/3 px-3  transition-all"
+                  key={product.id}
+                >
+                  <div className="bg-[#001d3d] rounded-lg overflow-hidden mb-10">
+                    <img
+                      src={product.img}
+                      className="w-full h-72 hover:scale-110 transition-all"
+                      alt=""
+                    />
+                    <div className="p-8 sm:p-9 md:p-7 xl:p-9 ">
+                      <h3
+                        className="
                              font-semibold
                              text-white text-xl
                              sm:text-[22px]
@@ -52,13 +58,11 @@ const Products = () => {
                              2xl:text-[22px]
                              mb-4
                              block
-                             
                              "
-                        >
-                          {product.name}
-                        </a>
+                      >
+                        {product.name}
                       </h3>
-                      <p class="text-base text-slate-200 leading-relaxed mb-7">
+                      <p className="text-base text-slate-200 leading-relaxed mb-7">
                         {product.description}
                       </p>
                       <hr className="w-2/3 mx-auto mb-3" />
@@ -86,16 +90,26 @@ const Products = () => {
                           </span>
                         </p>
                       </div>
-                      <a
-                        href="/"
-                        class=" py-2 px-10 w-full lg:px-8 xl:px-10 inline-flex items-center justify-center text-center text-white text-base bg-[#1e88e5] rounded-lg hover:bg-opacity-90 font-normal"
+                      <Link
+                        to="/"
+                        data-mdb-ripple="true"
+                        data-mdb-ripple-color="dark"
+                        className=" py-3 px-10 w-full lg:px-8 xl:px-10 inline-flex items-center justify-center text-center text-slate-700 font-semibold text-base bg-[#64dfdf] rounded-lg hover:bg-opacity-90"
                       >
                         Update
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
               ))}
+              <Link
+                to="/products"
+                className="w-2/3 mx-auto inline-flex items-center justify-center h-12 px-6 font-medium text-gray-900 transition duration-200 rounded shadow-md bg-[#90e0ef] border-0 hover:bg-opacity-75 focus:shadow-outline focus:outline-none active:scale-90 text-xl tracking-wider"
+                data-mdb-ripple="true"
+                data-mdb-ripple-color="dark"
+              >
+                Manage Products
+              </Link>
             </div>
           </div>
         </div>
