@@ -20,8 +20,8 @@ const Navbar = () => {
   return (
     <div className="px-4 py-2 mx-auto  md:px-20 z-10 lg:px-20 sticky top-0 bg-realBlack  border-b-2 border-gray-700 ">
       <div className="relative flex items-center justify-between">
-        <Link to="/" className="inline-flex items-center w-1/12">
-          <img src={logo} alt="" className=" h-16 w-20 rounded-xl" />
+        <Link to="/" className="inline-flex items-center w-1/2 md:w-1/12">
+          <img src={logo} alt="" className=" h-16 w-1/2 rounded-xl" />
           <span className="italic text-xl font-bold tracking-widest text-slate-100 uppercase">
             Nextron!
           </span>

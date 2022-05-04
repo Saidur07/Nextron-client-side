@@ -14,9 +14,27 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import MyProducts from "./Pages/MyProducts/MyProducts";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
+import { useEffect, useState } from "react";
+import Loader from "./components/Shared/Loader/Loader";
 
 function App() {
-  return (
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Wait for 3 seconds
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+  }, []);
+
+  return isLoading ? (
+    <div className="w-full h-screen flex justify-center items-center flex-col">
+      <Loader></Loader>
+      <h1 className="text-5xl text-white tracking-widest animate-ping mt-6">
+        Loading...
+      </h1>
+    </div>
+  ) : (
     <div>
       <Navbar></Navbar>
       <Routes>

@@ -40,7 +40,7 @@ const Header = () => {
               to="/about"
               data-mdb-ripple="true"
               data-mdb-ripple-color="white"
-              className="text-white bg-darkBlue p-5 rounded-xl md:ml-48 shadow-lg active:scale-90 hover:text-gray-300 transition-all"
+              className="text-white bg-darki p-5 rounded-lg md:ml-48 shadow-lg active:scale-90 hover:text-gray-300 transition-all"
             >
               Learn More
             </Link>

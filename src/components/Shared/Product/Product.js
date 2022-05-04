@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const Product = (props) => {
-  const [img, name, description, price, supplier, quantity] = props.data;
+  const { img, name, description, price, supplier, quantity } = props.data;
   return (
     <div className="w-full md:w-1/2 xl:w-1/3 px-3  transition-all">
       <div className="bg-[#001d3d] rounded-lg overflow-hidden mb-10">
