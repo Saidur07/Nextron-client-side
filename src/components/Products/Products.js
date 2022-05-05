@@ -48,7 +48,7 @@ const Products = () => {
                       <img
                         src={product.img}
                         className="w-full h-72 hover:scale-110 transition-all"
-                        alt=""
+                        alt="Product"
                       />
                       <div className="p-8 sm:p-9 md:p-7 xl:p-9 ">
                         <h3
@@ -110,7 +110,7 @@ const Products = () => {
                             to={"/product/" + product._id}
                             data-mdb-ripple="true"
                             data-mdb-ripple-color="white"
-                            className=" py-3 px-10 w-full lg:px-8 xl:px-10 inline-flex items-center justify-center text-center text-slate-700 font-semibold text-base bg-[#64dfdf] rounded-lg hover:bg-opacity-90 mx-2"
+                            className=" py-3 px-10 w-full lg:px-8 xl:px-10 inline-flex items-center justify-center text-center text-slate-100 font-semibold text-base bg-darku rounded-lg hover:bg-opacity-90 mx-2"
                           >
                             Manage
                           </Link>
@@ -122,7 +122,7 @@ const Products = () => {
               )}
               <Link
                 to="/products"
-                className="w-2/3 mx-auto inline-flex items-center justify-center h-12 px-6 font-medium text-gray-900 transition duration-200 rounded shadow-md bg-[#64dfdf] border-0 hover:bg-opacity-75 focus:shadow-outline focus:outline-none active:scale-90 text-lg md:text-xl md:tracking-wider"
+                className="w-2/3 mx-auto inline-flex items-center justify-center h-12 px-6 font-medium text-gray-100 transition duration-200 rounded shadow-md bg-darku border-0 hover:bg-opacity-75 focus:shadow-outline focus:outline-none active:scale-90 text-lg md:text-xl md:tracking-wide"
                 data-mdb-ripple="true"
                 data-mdb-ripple-color="white"
               >

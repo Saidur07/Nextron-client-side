@@ -1,7 +1,9 @@
 import React from "react";
 import "flowbite";
+import bar from "../../components/Shared/Progress/Progress";
 
 const Blogs = () => {
+  bar();
   return (
     <div className="bg-realBlack">
       <h1 className="text-center text-4xl py-6 font-serif text-white">

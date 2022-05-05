@@ -2,16 +2,36 @@ import React from "react";
 import { Link } from "react-router-dom";
 import solds from "../../../assets/images/sold.png";
 import available from "../../../assets/images/available.png";
+import Swal from "sweetalert2";
 const Product = (props) => {
   const { _id, img, name, description, price, supplier, quantity, sold } =
     props.data;
+  const handleDelete = () => {
+    Swal.fire({
+      title: "Are you sure to delete this?",
+      text: "Please don't delete any product if you are here just for visiting. It will also delete from the database 🥶",
+      icon: "success",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yeahh ",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          "Deleted!",
+          "The product delted successfully from the database",
+          "success"
+        );
+      }
+    });
+  };
   return (
     <div className="w-full md:w-1/2 xl:w-1/3 px-3  transition-all ">
       <div className="bg-[#001d3d] rounded-lg overflow-hidden mb-10">
         <img
           src={img}
           className="w-full h-72 hover:scale-110 transition-all"
-          alt=""
+          alt="Product"
         />
         <div className="p-8 sm:p-9 md:p-7 xl:p-9 ">
           <h3
@@ -73,11 +93,12 @@ const Product = (props) => {
               to={"/product/" + _id}
               data-mdb-ripple="true"
               data-mdb-ripple-color="white"
-              className=" py-3 px-10 w-full lg:px-8 xl:px-10 inline-flex items-center justify-center text-center text-slate-700 font-semibold text-base bg-[#64dfdf] rounded-lg hover:bg-opacity-90 mx-2 mb-4 md:mb-0"
+              className=" py-3 px-10 w-full lg:px-8 xl:px-10 inline-flex items-center justify-center text-center text-slate-100 font-semibold text-base bg-darku rounded-lg hover:bg-opacity-90 mx-2 mb-4 md:mb-0"
             >
               Manage
             </Link>
             <button
+              onClick={handleDelete}
               data-mdb-ripple="true"
               data-mdb-ripple-color="white"
               className=" py-3 px-10 w-full lg:px-8 xl:px-10 inline-flex items-center justify-center text-center text-slate-100 font-semibold text-base bg-[#c9184a] rounded-lg hover:bg-opacity-90 mx-2"

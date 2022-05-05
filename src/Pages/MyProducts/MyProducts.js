@@ -1,10 +1,12 @@
 import React from "react";
 import Loader from "../../components/Shared/Loader/Loader";
 import Product from "../../components/Shared/Product/Product";
+import bar from "../../components/Shared/Progress/Progress";
 import useProducts from "../../hooks/useProducts";
 
 const MyProducts = () => {
   const [products] = useProducts();
+  bar();
   return (
     <div>
       <section className="bg-realBlack pt-4 px-4 lg:px-0">

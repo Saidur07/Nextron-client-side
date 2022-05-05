@@ -6,6 +6,7 @@ import {
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Loader from "../../components/Shared/Loader/Loader";
+import bar from "../../components/Shared/Progress/Progress";
 import Social from "../../components/Shared/SocialSignIn/Social";
 import auth from "../../firebase.init";
 
@@ -45,6 +46,7 @@ const Register = () => {
   if (user) {
     console.log("Registerd succesfully");
   }
+  bar();
   return (
     <div className="bg-realBlack">
       <h1 className="md:text-5xl text-3xl text-center py-8 text-gray-300">

@@ -3,9 +3,11 @@ import Product from "../../components/Shared/Product/Product";
 import useProducts from "../../hooks/useProducts";
 import Loader from "../../components/Shared/Loader/Loader";
 import { Link } from "react-router-dom";
+import bar from "../../components/Shared/Progress/Progress";
 
 const AllProducts = () => {
   const [products] = useProducts();
+  bar();
   return (
     <div className="bg-realBlack py-4">
       <div className="flex flex-wrap -mx-4">
@@ -46,7 +48,7 @@ const AllProducts = () => {
       <div className="flex items-center justify-center">
         <Link
           to="/addproducts"
-          className="w-2/3 mx-auto inline-flex items-center justify-center h-12 px-6 font-medium text-gray-900 transition duration-200 rounded shadow-md bg-[#64dfdf] border-0 hover:bg-opacity-75 focus:shadow-outline focus:outline-none active:scale-90 text-lg md:text-xl md:tracking-wider "
+          className="w-2/3 mx-auto inline-flex items-center justify-center h-12 px-6 font-medium text-gray-100 transition duration-200 rounded shadow-md bg-darku border-0 hover:bg-opacity-75 focus:shadow-outline focus:outline-none active:scale-90 text-lg md:text-xl md:tracking-wider "
           data-mdb-ripple="true"
           data-mdb-ripple-color="white"
         >

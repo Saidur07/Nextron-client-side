@@ -37,6 +37,7 @@ const Newsletter = () => {
             className="shadow-md bg-gray-700  p-4  text-gray-300 text-md rounded-md block md:w-96 w-72 h-14"
             required
             readOnly
+            disabled
           />
           <input
             type="submit"

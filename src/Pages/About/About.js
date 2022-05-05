@@ -1,9 +1,11 @@
 import React from "react";
 import sr from "../../assets/images/sr.png";
+import bar from "../../components/Shared/Progress/Progress";
 
 const About = () => {
+  bar();
   return (
-    <div className="bg-realBlack py-6">
+    <div className="bg-realBlack py-6 bg-[]">
       <div className="p-4 w-full md:w-2/3 bg-realBlack rounded-lg shadow-xl md:px-6 md:py-8  container mx-auto">
         <img src={sr} className="mx-auto my-4 rounded-xl" alt="" />
         <h1 className="text-center text-4xl font-serif text-white">

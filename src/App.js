@@ -20,7 +20,6 @@ import AddProduct from "./Pages/AddProduct/AddProduct";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
     // Wait for 1.5 seconds
     setTimeout(() => {

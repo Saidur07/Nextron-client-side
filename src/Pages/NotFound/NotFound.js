@@ -1,8 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import bar from "../../components/Shared/Progress/Progress";
 import "./NotFound.css";
 
 const NotFound = () => {
+  bar();
   return (
     <div>
       <div className="not-found parallax">

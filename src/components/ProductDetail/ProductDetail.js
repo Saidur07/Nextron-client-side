@@ -1,22 +1,44 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import bar from "../Shared/Progress/Progress";
 
 const ProductDetail = () => {
-  const confirmDelete = () => {
+  const confirmDeliver = () => {
     Swal.fire({
-      title: "Are you sure?",
-      text: "You won't be able to revert this!",
-      icon: "warning",
+      title: "Are you sure its deliverd?",
+      text: "Check once again!",
+      icon: "success",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
       cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonText: "Yeahh ",
     }).then((result) => {
       if (result.isConfirmed) {
-        Swal.fire("Deleted!", "Your file has been deleted.", "success");
+        Swal.fire(
+          "Deliverd!",
+          "Product quantity decreased successfully",
+          "success"
+        );
       }
     });
+  };
+  const quantityRef = useRef(0);
+  const handleQuantity = (event) => {
+    event.preventDefault();
+    const quantity = quantityRef.current.value;
+    if (quantity <= 0) {
+      Swal.fire({
+        icon: "error",
+        title: "Hey!",
+        text: "Enter a valid quantity",
+        footer: "<p>Enter a number avobe 0</p>",
+      });
+      quantityRef.current.value = "";
+    } else {
+      Swal.fire("Done!", "Quantity added successfully!", "success");
+      quantityRef.current.value = "";
+    }
   };
 
   const { productId } = useParams();
@@ -28,6 +50,7 @@ const ProductDetail = () => {
       .then((res) => res.json())
       .then((data) => setProduct(data));
   }, [productId]);
+  bar();
 
   return (
     <div>
@@ -97,17 +120,18 @@ const ProductDetail = () => {
                 </p>
 
                 <button
-                  onClick={confirmDelete}
+                  onClick={confirmDeliver}
                   className="w-2/3 mx-auto inline-flex items-center justify-center h-12 px-6 font-medium text-gray-100 transition duration-200 rounded shadow-md bg-darki border-0 hover:bg-opacity-75 focus:shadow-outline focus:outline-none active:scale-90 text-xl  cursor-pointer ml-4 hover:text-gray-300  mt-4"
                 >
                   Deliverd
                 </button>
                 <div className="mt-4">
-                  <form className="flex">
+                  <form onSubmit={handleQuantity} className="flex">
                     <input
+                      ref={quantityRef}
                       type="number"
                       placeholder="Add More Quantity"
-                      class="input  w-full max-w-xs"
+                      className="input w-full max-w-sm"
                       required
                     ></input>
                     <input
@@ -121,7 +145,7 @@ const ProductDetail = () => {
               <div className="flex items-center justify-center mt-4">
                 <Link
                   to="/products"
-                  className="w-2/3 mx-auto inline-flex items-center justify-center h-12 px-6 font-medium text-gray-900 transition duration-200 rounded shadow-md bg-[#64dfdf] border-0 hover:bg-opacity-75 focus:shadow-outline focus:outline-none active:scale-90 text-lg md:text-xl md:tracking-wider "
+                  className="w-2/3 mx-auto inline-flex items-center justify-center h-12 px-6 font-medium text-gray-100 transition duration-200 rounded shadow-md bg-darki mt-6 border-0 hover:bg-opacity-75 focus:shadow-outline focus:outline-none active:scale-90 text-lg md:text-xl md:tracking-wider "
                   data-mdb-ripple="true"
                   data-mdb-ripple-color="white"
                 >

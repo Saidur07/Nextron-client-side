@@ -138,8 +138,9 @@ const Contact = () => {
                         border border-[f0f0f0]
                         outline-none
                         focus-visible:shadow-none
-                        focus:border-primary
+                        focus:border-sky-400
                         "
+                      required
                     />
                   </div>
                   <div className="mb-6">
@@ -155,14 +156,15 @@ const Contact = () => {
                         border border-[f0f0f0]
                         outline-none
                         focus-visible:shadow-none
-                        focus:border-primary
+                        focus:border-sky-400
                         "
+                      required
                     />
                   </div>
                   <div className="mb-6">
                     <input
                       type="text"
-                      placeholder="Your Phone"
+                      placeholder="Your Subject"
                       className="
                         w-full
                         rounded
@@ -172,10 +174,12 @@ const Contact = () => {
                         border border-[f0f0f0]
                         outline-none
                         focus-visible:shadow-none
-                        focus:border-primary
+                        focus:border-sky-400
                         "
+                      required
                     />
                   </div>
+
                   <div className="mb-6">
                     <textarea
                       rows="6"
@@ -190,8 +194,9 @@ const Contact = () => {
                         resize-none
                         outline-none
                         focus-visible:shadow-none
-                        focus:border-primary
+                        focus:border-sky-400
                         "
+                      required
                     ></textarea>
                   </div>
                   <div>
@@ -199,7 +204,7 @@ const Contact = () => {
                       data-mdb-ripple="true"
                       data-mdb-ripple-color="white"
                       type="submit"
-                      className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-gray-700 hover:bg-gray-600 focus:shadow-outline focus:outline-none active:scale-90"
+                      className="inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md bg-darku hover:bg-opacity-90 focus:shadow-outline focus:outline-none active:scale-90"
                     >
                       Send Message
                     </button>
