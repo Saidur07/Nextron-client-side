@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const ProductDetail = () => {
@@ -95,12 +95,38 @@ const ProductDetail = () => {
                   Quantity :{" "}
                   <span className="text-green-400">{product.quantity}</span>
                 </p>
+
                 <button
                   onClick={confirmDelete}
                   className="w-2/3 mx-auto inline-flex items-center justify-center h-12 px-6 font-medium text-gray-100 transition duration-200 rounded shadow-md bg-darki border-0 hover:bg-opacity-75 focus:shadow-outline focus:outline-none active:scale-90 text-xl  cursor-pointer ml-4 hover:text-gray-300  mt-4"
                 >
                   Deliverd
                 </button>
+                <div className="mt-4">
+                  <form className="flex">
+                    <input
+                      type="number"
+                      placeholder="Add More Quantity"
+                      class="input  w-full max-w-xs"
+                      required
+                    ></input>
+                    <input
+                      type="submit"
+                      value="Add"
+                      className="w-2/3 mx-auto inline-flex items-center justify-center h-12 px-6 font-medium text-gray-100 transition duration-200 rounded shadow-md bg-darki border-0 hover:bg-opacity-75 focus:shadow-outline focus:outline-none active:scale-90 text-xl  cursor-pointer ml-4 hover:text-gray-300 "
+                    />
+                  </form>
+                </div>
+              </div>
+              <div className="flex items-center justify-center mt-4">
+                <Link
+                  to="/products"
+                  className="w-2/3 mx-auto inline-flex items-center justify-center h-12 px-6 font-medium text-gray-900 transition duration-200 rounded shadow-md bg-[#64dfdf] border-0 hover:bg-opacity-75 focus:shadow-outline focus:outline-none active:scale-90 text-lg md:text-xl md:tracking-wider "
+                  data-mdb-ripple="true"
+                  data-mdb-ripple-color="white"
+                >
+                  See All Products
+                </Link>
               </div>
             </div>
           </div>
