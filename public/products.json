@@ -17,7 +17,7 @@
     "img": "https://images.unsplash.com/photo-1574717025058-2f8737d2e2b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dmlkZW8lMjBlZGl0aW5nfGVufDB8fDB8fA%3D%3D&w=1000&q=80",
     "quantity": 3,
     "supplier": "IDK",
-    "sold": false
+    "sold": true
   },
   {
     "id": 3,

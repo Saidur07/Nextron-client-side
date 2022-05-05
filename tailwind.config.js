@@ -23,10 +23,20 @@ module.exports = {
           "0%": { marginTop: "-60vh", marginLeft: "-30vw" },
           "100%": { marginTop: "0px", marginLeft: "0vw" },
         },
+        left: {
+          "0%": { marginLeft: "-30vw" },
+          "100%": { marginLeft: "0vw" },
+        },
+        right: {
+          "0%": { marginRight: "-30vw" },
+          "100%": { marginRight: "0vw" },
+        },
       },
       animation: {
         wiggle: "wiggle 2s ease-in-out infinite",
         open: "open .5s ease-in-out forwards",
+        left: "left .5s ease-in-out forwards",
+        right: "right .5s ease-in-out forwards",
       },
     },
   },

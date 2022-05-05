@@ -16,12 +16,13 @@ import MyProducts from "./Pages/MyProducts/MyProducts";
 import ProductDetail from "./components/ProductDetail/ProductDetail";
 import { useEffect, useState } from "react";
 import Loader from "./components/Shared/Loader/Loader";
+import AddProduct from "./Pages/AddProduct/AddProduct";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Wait for 3 seconds
+    // Wait for 1.5 seconds
     setTimeout(() => {
       setIsLoading(false);
     }, 1500);
@@ -30,8 +31,8 @@ function App() {
   return isLoading ? (
     <div className="w-full h-screen flex justify-center items-center flex-col">
       <Loader></Loader>
-      <h1 className="text-5xl text-white tracking-widest animate-ping mt-6">
-        Loading...
+      <h1 className="text-3xl md:text-5xl text-white tracking-widest animate-ping mt-6 font-serif">
+        NEXTRON!
       </h1>
     </div>
   ) : (
@@ -53,6 +54,14 @@ function App() {
           element={
             <RequireAuth>
               <ProductDetail></ProductDetail>
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/addproducts"
+          element={
+            <RequireAuth>
+              <AddProduct></AddProduct>
             </RequireAuth>
           }
         ></Route>

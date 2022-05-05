@@ -43,7 +43,7 @@ const Register = () => {
   };
 
   if (user) {
-    console.log(user);
+    console.log("Registerd succesfully");
   }
   return (
     <div className="bg-realBlack">

@@ -1,11 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
-import Product from "../Shared/Product/Product";
+import Loader from "../../components/Shared/Loader/Loader";
 
 const Products = () => {
   const [products] = useProducts();
-  console.log(products);
   return (
     <div>
       <section className="bg-darka pt-20 lg:pt-[120px] pb-12 lg:pb-[90px] px-4 lg:px-0">
@@ -37,12 +36,93 @@ const Products = () => {
 
           <div className="container">
             <div className="flex flex-wrap -mx-4">
-              {products.slice(2, 8).map((product) => (
-                <Product data={product} key={product._id}></Product>
-              ))}
+              {products.length === 0 ? (
+                <Loader></Loader>
+              ) : (
+                products.slice(2, 8).map((product) => (
+                  <div
+                    className="w-full md:w-1/2 xl:w-1/3 px-3  transition-all"
+                    key={product._id}
+                  >
+                    <div className="bg-[#001d3d] rounded-lg overflow-hidden mb-10">
+                      <img
+                        src={product.img}
+                        className="w-full h-72 hover:scale-110 transition-all"
+                        alt=""
+                      />
+                      <div className="p-8 sm:p-9 md:p-7 xl:p-9 ">
+                        <h3
+                          className="
+                                     font-semibold
+                                     text-white text-xl
+                                     sm:text-[22px]
+                                     md:text-xl
+                                     lg:text-[22px]
+                                     xl:text-xl
+                                     2xl:text-[22px]
+                                     mb-4
+                                     block
+                                     "
+                        >
+                          {product.name}
+                        </h3>
+                        <p className="text-base text-slate-200 leading-relaxed mb-7">
+                          {product.description}
+                        </p>
+                        <hr className="w-2/3 mx-auto mb-3" />
+                        <div className="md:ml-16 ml-6">
+                          <p
+                            className="font-medium
+                                     text-white text-lg
+                                     mb-4
+                                     "
+                          >
+                            Price :{" "}
+                            <span className="text-green-300">
+                              ${product.price}
+                            </span>
+                          </p>
+                          <p
+                            className="font-medium
+                                     text-white text-lg
+                                     mb-4
+                                     "
+                          >
+                            Supplier :{" "}
+                            <span className="text-cyan-300">
+                              {product.supplier}
+                            </span>
+                          </p>
+                          <p
+                            className="font-medium
+                                     text-white text-lg
+                                     mb-4
+                                     "
+                          >
+                            Quantity :{" "}
+                            <span className="text-yellow-300">
+                              {product.quantity}
+                            </span>
+                          </p>
+                        </div>
+                        <div className="flex ">
+                          <Link
+                            to={"/product/" + product._id}
+                            data-mdb-ripple="true"
+                            data-mdb-ripple-color="white"
+                            className=" py-3 px-10 w-full lg:px-8 xl:px-10 inline-flex items-center justify-center text-center text-slate-700 font-semibold text-base bg-[#64dfdf] rounded-lg hover:bg-opacity-90 mx-2"
+                          >
+                            Manage
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                ))
+              )}
               <Link
                 to="/products"
-                className="w-2/3 mx-auto inline-flex items-center justify-center h-12 px-6 font-medium text-gray-100 transition duration-200 rounded shadow-md bg-darki border-0 hover:bg-opacity-75 focus:shadow-outline focus:outline-none active:scale-90 text-xl tracking-wider"
+                className="w-2/3 mx-auto inline-flex items-center justify-center h-12 px-6 font-medium text-gray-900 transition duration-200 rounded shadow-md bg-[#64dfdf] border-0 hover:bg-opacity-75 focus:shadow-outline focus:outline-none active:scale-90 text-lg md:text-xl md:tracking-wider"
                 data-mdb-ripple="true"
                 data-mdb-ripple-color="white"
               >

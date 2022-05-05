@@ -1,10 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
+import solds from "../../../assets/images/sold.png";
+import available from "../../../assets/images/available.png";
 const Product = (props) => {
-  const { img, name, description, price, supplier, quantity } = props.data;
+  const { _id, img, name, description, price, supplier, quantity, sold } =
+    props.data;
   return (
-    <div className="w-full md:w-1/2 xl:w-1/3 px-3  transition-all">
+    <div className="w-full md:w-1/2 xl:w-1/3 px-3  transition-all ">
       <div className="bg-[#001d3d] rounded-lg overflow-hidden mb-10">
         <img
           src={img}
@@ -31,40 +33,49 @@ const Product = (props) => {
             {description}
           </p>
           <hr className="w-2/3 mx-auto mb-3" />
-          <div>
-            <p
-              className="font-medium
+          <div className="flex justify-center items-center md:flex-row flex-col">
+            <div className="w-1/2 md:pl-16 ">
+              <p
+                className="font-medium
                              text-white text-lg
                              mb-4
                              "
-            >
-              Price : <span className="text-green-300">${price}</span>
-            </p>
-            <p
-              className="font-medium
+              >
+                Price : <span className="text-green-300">${price}</span>
+              </p>
+              <p
+                className="font-medium
                              text-white text-lg
                              mb-4
                              "
-            >
-              Supplier : <span className="text-cyan-300">{supplier}</span>
-            </p>
-            <p
-              className="font-medium
+              >
+                Supplier : <span className="text-cyan-300">{supplier}</span>
+              </p>
+              <p
+                className="font-medium
                              text-white text-lg
                              mb-4
                              "
-            >
-              Quantity : <span className="text-yellow-300">{quantity}</span>
-            </p>
+              >
+                Quantity : <span className="text-yellow-300">{quantity}</span>
+              </p>
+            </div>
+            <div className="w-1/2">
+              {sold ? (
+                <img src={solds} alt="" className="md:w-2/3 w-full " />
+              ) : (
+                <img src={available} alt="" className="md:w-2/3 w-full " />
+              )}
+            </div>
           </div>
-          <div className="flex ">
+          <div className="flex flex-col md:flex-row">
             <Link
-              to="/"
+              to={"/product/" + _id}
               data-mdb-ripple="true"
               data-mdb-ripple-color="white"
-              className=" py-3 px-10 w-full lg:px-8 xl:px-10 inline-flex items-center justify-center text-center text-slate-700 font-semibold text-base bg-[#64dfdf] rounded-lg hover:bg-opacity-90 mx-2"
+              className=" py-3 px-10 w-full lg:px-8 xl:px-10 inline-flex items-center justify-center text-center text-slate-700 font-semibold text-base bg-[#64dfdf] rounded-lg hover:bg-opacity-90 mx-2 mb-4 md:mb-0"
             >
-              Update
+              Manage
             </Link>
             <button
               data-mdb-ripple="true"
