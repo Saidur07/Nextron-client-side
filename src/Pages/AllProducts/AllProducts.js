@@ -12,7 +12,7 @@ const AllProducts = () => {
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure to delete this?",
-      text: "Please don't delete any product if you are here just for visiting. It will also delete from the database 🥶",
+      text: "Please don't delete any product if you are here just for visiting. It will also delete from the database. Consider creating you own product and then delete. Consider creating you own product and then delete 🥶",
       icon: "warning",
       showCancelButton: true,
       confirmButtonColor: "#3085d6",
