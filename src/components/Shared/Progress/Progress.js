@@ -4,11 +4,11 @@ const bar = () => {
     size: 4,
     color: "#0080FF",
     className: "z-50",
-    delay: "200",
+    delay: "100",
   });
   progress.start();
   setTimeout(() => {
     progress.finish();
-  }, 800);
+  }, 500);
 };
 export default bar;

@@ -1,45 +1,27 @@
-import React, { useRef } from "react";
+import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import Swal from "sweetalert2";
 import bar from "../../components/Shared/Progress/Progress";
 import auth from "../../firebase.init";
+import { useForm } from "react-hook-form";
 const AddProduct = () => {
   bar();
   const [user] = useAuthState(auth);
-  const productRef = useRef("");
-  const supplierRef = useRef("");
-  const emailRef = useRef("");
-  const priceRef = useRef(0);
-  const quantityRef = useRef(0);
-  const imgRef = useRef("");
-  const descRef = useRef("");
 
-  const handleAddProduct = (event) => {
-    event.preventDefault();
-    const product = productRef.current.value;
-    const supplier = supplierRef.current.value;
-    const email = emailRef.current.value;
-    const price = priceRef.current.value;
-    const quantity = quantityRef.current.value;
-    const img = imgRef.current.value;
-    const desc = descRef.current.value;
-    if (quantity <= 0 || price <= 0) {
-      Swal.fire({
-        icon: "error",
-        title: "Hey!",
-        text: "Enter a valid number",
-      });
-      return;
-    }
-    console.log(product, supplier, email, price, quantity, img, desc);
-    Swal.fire("Done!", "Your Product added!", "success");
-    productRef.current.value = "";
-    supplierRef.current.value = "";
-    priceRef.current.value = "";
-    quantityRef.current.value = "";
-    imgRef.current.value = "";
-    descRef.current.value = "";
+  const { register, handleSubmit, reset } = useForm();
+  const handleAddProduct = (data) => {
+    const url = `https://still-eyrie-22111.herokuapp.com/product`;
+    fetch(url, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(data),
+    }).then((res) => res.json());
+    Swal.fire("Done!", "The Product added Successfully!", "success");
+    reset();
   };
+
   return (
     <div>
       <div className="p-5">
@@ -153,7 +135,7 @@ const AddProduct = () => {
                 <h3 className="pt-4 text-2xl text-center">Add New Product!</h3>
                 <form
                   className="md:px-8 pt-6 pb-8 mb-4 bg-white rounded"
-                  onSubmit={handleAddProduct}
+                  onSubmit={handleSubmit(handleAddProduct)}
                 >
                   <div className="mb-4 md:flex md:justify-between">
                     <div className="mb-4 md:mr-2 md:mb-0">
@@ -164,11 +146,11 @@ const AddProduct = () => {
                         Product Name
                       </label>
                       <input
-                        ref={productRef}
                         className="w-full px-6 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                         id="ProductName"
                         type="text"
                         placeholder=" Product Name"
+                        {...register("name")}
                         required
                       />
                     </div>
@@ -180,11 +162,11 @@ const AddProduct = () => {
                         Supplier Name
                       </label>
                       <input
-                        ref={supplierRef}
                         className="w-full px-6 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                         id="supplierName"
                         type="text"
                         placeholder="Supplier Name"
+                        {...register("supplier")}
                         required
                       />
                     </div>
@@ -197,15 +179,14 @@ const AddProduct = () => {
                       Supplier Email
                     </label>
                     <input
-                      ref={emailRef}
                       className="w-full px-6 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                       id="Email"
                       type="email"
                       placeholder="Email"
                       value={user.email}
+                      {...register("email")}
                       required
                       readOnly
-                      disabled
                     />
                   </div>
                   <div className="mb-4 md:flex md:justify-between">
@@ -214,14 +195,15 @@ const AddProduct = () => {
                         className="block mb-2 text-sm font-bold text-gray-700"
                         htmlFor="Price"
                       >
-                        Price
+                        Price <sup>*</sup>
                       </label>
+
                       <input
-                        ref={priceRef}
                         className="w-full px-6 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                         id="Price"
                         type="number"
                         placeholder=" Price"
+                        {...register("price", { min: 0 })}
                         required
                       />
                     </div>
@@ -230,18 +212,24 @@ const AddProduct = () => {
                         className="block mb-2 text-sm font-bold text-gray-700"
                         htmlFor="Quantity"
                       >
-                        Quantity
+                        Quantity <sup>*</sup>
                       </label>
                       <input
-                        ref={quantityRef}
                         className="w-full px-6 py-2 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                         id="Quantity"
                         type="number"
                         placeholder="Quantity"
+                        {...register("quantity", { min: 0 })}
                         required
                       />
                     </div>
                   </div>
+                  <label
+                    className="block mb-2 text-sm text-center font-bold text-red-400"
+                    htmlFor="Price"
+                  >
+                    *Enter a value above 0
+                  </label>
                   <div className="mb-4">
                     <label
                       className="block mb-2 text-sm font-bold text-gray-700"
@@ -250,11 +238,11 @@ const AddProduct = () => {
                       Image
                     </label>
                     <input
-                      ref={imgRef}
                       className="w-full px-6 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                       id="Image"
                       type="url"
                       placeholder="Image Link"
+                      {...register("img")}
                       required
                     />
                   </div>
@@ -266,11 +254,12 @@ const AddProduct = () => {
                       Description
                     </label>
                     <textarea
-                      ref={descRef}
                       className="w-full px-6 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                       id="Description"
                       rows={5}
                       placeholder="Description"
+                      {...register("description")}
+                      required
                     />
                   </div>
                   <hr className="mb-6 border-t" />

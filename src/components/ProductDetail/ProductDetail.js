@@ -23,6 +23,7 @@ const ProductDetail = () => {
       }
     });
   };
+
   const quantityRef = useRef(0);
   const handleQuantity = (event) => {
     event.preventDefault();
@@ -72,7 +73,7 @@ const ProductDetail = () => {
                 {product.description}
               </p>
               <hr className="w-1/2 mx-auto my-4" />
-              <div className="w-1/2 md:mx-auto">
+              <div className="md:w-1/2 w-full md:mx-auto">
                 <p
                   className="font-medium
                              text-gray-200 text-lg
@@ -98,7 +99,7 @@ const ProductDetail = () => {
                 >
                   Sold :{" "}
                   <span className="text-orange-400">
-                    {product.sold ? "Yes" : "No"}
+                    {product.quantity < 1 ? "Yes" : "No"}
                   </span>
                 </p>
                 <p
@@ -126,7 +127,10 @@ const ProductDetail = () => {
                   Deliverd
                 </button>
                 <div className="mt-4">
-                  <form onSubmit={handleQuantity} className="flex">
+                  <form
+                    onSubmit={handleQuantity}
+                    className="flex flex-col md:flex-row"
+                  >
                     <input
                       ref={quantityRef}
                       type="number"
@@ -137,7 +141,7 @@ const ProductDetail = () => {
                     <input
                       type="submit"
                       value="Add"
-                      className="w-2/3 mx-auto inline-flex items-center justify-center h-12 px-6 font-medium text-gray-100 transition duration-200 rounded shadow-md bg-darki border-0 hover:bg-opacity-75 focus:shadow-outline focus:outline-none active:scale-90 text-xl  cursor-pointer ml-4 hover:text-gray-300 "
+                      className="w-2/3 mt-4 md:mt-0 mx-auto inline-flex items-center justify-center h-12 px-6 font-medium text-gray-100 transition duration-200 rounded shadow-md bg-darki border-0 hover:bg-opacity-75 focus:shadow-outline focus:outline-none active:scale-90 text-xl  cursor-pointer ml-4 hover:text-gray-300 "
                     />
                   </form>
                 </div>
@@ -145,7 +149,7 @@ const ProductDetail = () => {
               <div className="flex items-center justify-center mt-4">
                 <Link
                   to="/products"
-                  className="w-2/3 mx-auto inline-flex items-center justify-center h-12 px-6 font-medium text-gray-100 transition duration-200 rounded shadow-md bg-darki mt-6 border-0 hover:bg-opacity-75 focus:shadow-outline focus:outline-none active:scale-90 text-lg md:text-xl md:tracking-wider "
+                  className="md:w-2/3 w-full mx-auto inline-flex items-center justify-center h-12 px-6 font-medium text-gray-100 transition duration-200 rounded shadow-md bg-darki mt-6 border-0 hover:bg-opacity-75 focus:shadow-outline focus:outline-none active:scale-90 text-lg md:text-xl md:tracking-wider "
                   data-mdb-ripple="true"
                   data-mdb-ripple-color="white"
                 >

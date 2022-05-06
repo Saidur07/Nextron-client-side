@@ -3,6 +3,9 @@ import { Link } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
 import Loader from "../../components/Shared/Loader/Loader";
 
+import solds from "../../assets/images/sold.png";
+import available from "../../assets/images/available.png";
+
 const Products = () => {
   const [products] = useProducts();
   return (
@@ -39,7 +42,7 @@ const Products = () => {
               {products.length === 0 ? (
                 <Loader></Loader>
               ) : (
-                products.slice(2, 8).map((product) => (
+                products.slice(0, 6).map((product) => (
                   <div
                     className="w-full md:w-1/2 xl:w-1/3 px-3  transition-all"
                     key={product._id}
@@ -70,40 +73,49 @@ const Products = () => {
                           {product.description}
                         </p>
                         <hr className="w-2/3 mx-auto mb-3" />
-                        <div className="md:ml-16 ml-6">
-                          <p
-                            className="font-medium
-                                     text-white text-lg
-                                     mb-4
-                                     "
-                          >
-                            Price :{" "}
-                            <span className="text-green-300">
-                              ${product.price}
-                            </span>
-                          </p>
-                          <p
-                            className="font-medium
-                                     text-white text-lg
-                                     mb-4
-                                     "
-                          >
-                            Supplier :{" "}
-                            <span className="text-cyan-300">
-                              {product.supplier}
-                            </span>
-                          </p>
-                          <p
-                            className="font-medium
-                                     text-white text-lg
-                                     mb-4
-                                     "
-                          >
-                            Quantity :{" "}
-                            <span className="text-yellow-300">
-                              {product.quantity}
-                            </span>
-                          </p>
+                        <div className="flex justify-center items-center md:flex-row flex-col">
+                          <div className="w-2/3 md:pl-16 ">
+                            <p
+                              className="font-medium
+                             text-white text-lg
+                             mb-4
+                             "
+                            >
+                              Price :{" "}
+                              <span className="text-green-300">
+                                ${product.price}
+                              </span>
+                            </p>
+                            <p
+                              className="font-medium
+                             text-white text-lg
+                             mb-4
+                             "
+                            >
+                              Supplier :{" "}
+                              <span className="text-cyan-300">
+                                {product.supplier}
+                              </span>
+                            </p>
+                            <p
+                              className="font-medium
+                             text-white text-lg
+                             mb-4
+                             "
+                            >
+                              Quantity :{" "}
+                              <span className="text-yellow-300">
+                                {product.quantity}
+                              </span>
+                            </p>
+                          </div>
+                          <div className="w-1/3">
+                            {product.quantity < 1 ? (
+                              <img src={solds} alt="" className="w-full " />
+                            ) : (
+                              <img src={available} alt="" className="w-full " />
+                            )}
+                          </div>
                         </div>
                         <div className="flex ">
                           <Link
@@ -120,6 +132,8 @@ const Products = () => {
                   </div>
                 ))
               )}
+            </div>
+            <div className="flex items-center justify-center">
               <Link
                 to="/products"
                 className="w-2/3 mx-auto inline-flex items-center justify-center h-12 px-6 font-medium text-gray-100 transition duration-200 rounded shadow-md bg-darku border-0 hover:bg-opacity-75 focus:shadow-outline focus:outline-none active:scale-90 text-lg md:text-xl md:tracking-wide"

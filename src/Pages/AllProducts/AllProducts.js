@@ -4,10 +4,39 @@ import useProducts from "../../hooks/useProducts";
 import Loader from "../../components/Shared/Loader/Loader";
 import { Link } from "react-router-dom";
 import bar from "../../components/Shared/Progress/Progress";
+import Swal from "sweetalert2";
 
 const AllProducts = () => {
-  const [products] = useProducts();
+  const [products, setProducts] = useProducts();
   bar();
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure to delete this?",
+      text: "Please don't delete any product if you are here just for visiting. It will also delete from the database 🥶",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yeahh ",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const url = `https://still-eyrie-22111.herokuapp.com/product/${id}`;
+        fetch(url, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            const remaining = products.filter((product) => product._id !== id);
+            setProducts(remaining);
+          });
+        Swal.fire(
+          "Deleted!",
+          "The product delted successfully from the database",
+          "success"
+        );
+      }
+    });
+  };
   return (
     <div className="bg-realBlack py-4">
       <div className="flex flex-wrap -mx-4">
@@ -40,7 +69,11 @@ const AllProducts = () => {
             <Loader></Loader>
           ) : (
             products.map((product) => (
-              <Product key={product._id} data={product}></Product>
+              <Product
+                key={product._id}
+                data={product}
+                button={handleDelete}
+              ></Product>
             ))
           )}
         </div>
