@@ -7,7 +7,7 @@ import { useForm } from "react-hook-form";
 const AddProduct = () => {
   bar();
   const [user] = useAuthState(auth);
-
+  const { email } = user;
   const { register, handleSubmit, reset } = useForm();
   const handleAddProduct = (data) => {
     const url = `https://still-eyrie-22111.herokuapp.com/product`;
@@ -17,6 +17,14 @@ const AddProduct = () => {
         "content-type": "application/json",
       },
       body: JSON.stringify(data),
+    }).then((res) => res.json());
+
+    fetch(`https://still-eyrie-22111.herokuapp.com/addproduct`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ ...data, email }),
     }).then((res) => res.json());
     Swal.fire("Done!", "The Product added Successfully!", "success");
     reset();

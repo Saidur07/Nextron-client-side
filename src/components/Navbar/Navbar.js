@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import logo from "../../assets/images/bolt.gif";
 import CustomLink from "../Shared/CustomLink/CustomLink";
 import { useAuthState } from "react-firebase-hooks/auth";
@@ -13,6 +13,7 @@ const Navbar = () => {
   const [navLinks] = useNavLinks("navLinks.json");
   const [userNavLinks] = useNavLinks("userNavLinks.json");
   const [user] = useAuthState(auth);
+  const navigate = useNavigate();
   const handleSignOut = () => {
     signOut(auth);
   };
@@ -84,8 +85,8 @@ const Navbar = () => {
                 Log Out
               </button>
             ) : (
-              <Link
-                to={"/login"}
+              <button
+                onClick={() => navigate("/login")}
                 type="button"
                 data-mdb-ripple="true"
                 data-mdb-ripple-color="white"
@@ -93,7 +94,7 @@ const Navbar = () => {
               >
                 {" "}
                 Log In
-              </Link>
+              </button>
             )}
           </li>
         </ul>

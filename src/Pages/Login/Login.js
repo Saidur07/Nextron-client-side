@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useRef } from "react";
 import {
   useSendPasswordResetEmail,
@@ -20,12 +21,17 @@ const Login = () => {
     useSignInWithEmailAndPassword(auth);
   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     const email = emailRef.current.value;
     const password = passwordRef.current.value;
 
     signInWithEmailAndPassword(email, password);
+    const { data } = await axios.post(
+      "https://still-eyrie-22111.herokuapp.com/login",
+      { email }
+    );
+    localStorage.setItem("token", data.token);
   };
   bar();
   if (user) {

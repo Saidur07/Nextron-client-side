@@ -1,12 +1,70 @@
-import React from "react";
+import axios from "axios";
+import { signOut } from "firebase/auth";
+import React, { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 import Loader from "../../components/Shared/Loader/Loader";
-import Product from "../../components/Shared/Product/Product";
+import MyProduct from "../../components/Shared/MyProduct/MyProduct";
 import bar from "../../components/Shared/Progress/Progress";
-import useProducts from "../../hooks/useProducts";
+import auth from "../../firebase.init";
+// import useProducts from "../../hooks/useProducts";
 
 const MyProducts = () => {
-  const [products] = useProducts();
+  const [products, setProducts] = useState([]);
+  const [user] = useAuthState(auth);
+  const navigate = useNavigate();
   bar();
+  useEffect(() => {
+    async function getProducts() {
+      const url = `https://still-eyrie-22111.herokuapp.com/productlist?email=${user.email}`;
+      try {
+        const { data } = await axios.get(url, {
+          headers: {
+            authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        });
+        setProducts(data);
+      } catch (err) {
+        if (err.response.status === 401 || err.response.status === 403) {
+          localStorage.removeItem("token");
+          signOut(auth);
+          navigate("/login");
+        }
+      }
+    }
+    getProducts();
+  }, []);
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure to delete this?",
+      text: "Please don't delete any product if you are here just for visiting. It will also delete from the database. Consider creating you own product and then delete 🥶",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yeahh ",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`https://still-eyrie-22111.herokuapp.com/productlist/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount) {
+              const remaining = products.filter((user) => user._id !== id);
+              setProducts(remaining);
+            }
+          });
+
+        Swal.fire(
+          "Deleted!",
+          "The product delted successfully from the database",
+          "success"
+        );
+      }
+    });
+  };
   return (
     <div>
       <section className="bg-realBlack pt-4 px-4 lg:px-0">
@@ -41,11 +99,13 @@ const MyProducts = () => {
               {products.length === 0 ? (
                 <Loader></Loader>
               ) : (
-                products
-                  .slice(3, 6)
-                  .map((product) => (
-                    <Product key={product._id} data={product}></Product>
-                  ))
+                products.map((product) => (
+                  <MyProduct
+                    key={product._id}
+                    data={product}
+                    button={handleDelete}
+                  ></MyProduct>
+                ))
               )}
             </div>
           </div>

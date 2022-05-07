@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import useProducts from "../../hooks/useProducts";
 import Loader from "../../components/Shared/Loader/Loader";
 
@@ -8,6 +8,7 @@ import available from "../../assets/images/available.png";
 
 const Products = () => {
   const [products] = useProducts();
+  const navigate = useNavigate();
   return (
     <div>
       <section className="bg-darka pt-20 lg:pt-[120px] pb-12 lg:pb-[90px] px-4 lg:px-0">
@@ -118,14 +119,14 @@ const Products = () => {
                           </div>
                         </div>
                         <div className="flex ">
-                          <Link
-                            to={"/product/" + product._id}
+                          <button
+                            onClick={() => navigate("/product/" + product._id)}
                             data-mdb-ripple="true"
                             data-mdb-ripple-color="white"
                             className=" py-3 px-10 w-full lg:px-8 xl:px-10 inline-flex items-center justify-center text-center text-slate-100 font-semibold text-base bg-darku rounded-lg hover:bg-opacity-90 mx-2"
                           >
                             Manage
-                          </Link>
+                          </button>
                         </div>
                       </div>
                     </div>
@@ -134,14 +135,14 @@ const Products = () => {
               )}
             </div>
             <div className="flex items-center justify-center">
-              <Link
-                to="/products"
+              <button
+                onClick={() => navigate("/products")}
                 className="w-2/3 mx-auto inline-flex items-center justify-center h-12 px-6 font-medium text-gray-100 transition duration-200 rounded shadow-md bg-darku border-0 hover:bg-opacity-75 focus:shadow-outline focus:outline-none active:scale-90 text-lg md:text-xl md:tracking-wide"
                 data-mdb-ripple="true"
                 data-mdb-ripple-color="white"
               >
                 Manage Products
-              </Link>
+              </button>
             </div>
           </div>
         </div>

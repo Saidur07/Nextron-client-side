@@ -1,11 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import solds from "../../../assets/images/sold.png";
 import available from "../../../assets/images/available.png";
-const Product = (props) => {
+const MyProduct = (props) => {
   const { _id, img, name, description, price, supplier, quantity } = props.data;
   const handleDelete = props.button;
-  const navigate = useNavigate();
   return (
     <div className="w-full md:w-1/2 xl:w-1/3 px-3  transition-all ">
       <div className="bg-[#001d3d] rounded-lg overflow-hidden mb-10">
@@ -71,14 +69,6 @@ const Product = (props) => {
           </div>
           <div className="flex flex-col md:flex-row">
             <button
-              onClick={() => navigate("/product/" + _id)}
-              data-mdb-ripple="true"
-              data-mdb-ripple-color="white"
-              className=" py-3 px-10 w-full lg:px-8 xl:px-10 inline-flex items-center justify-center text-center text-slate-100 font-semibold text-base bg-darku rounded-lg hover:bg-opacity-90 mx-2 mb-4 md:mb-0"
-            >
-              Manage
-            </button>
-            <button
               onClick={() => handleDelete(_id)}
               data-mdb-ripple="true"
               data-mdb-ripple-color="white"
@@ -93,4 +83,4 @@ const Product = (props) => {
   );
 };
 
-export default Product;
+export default MyProduct;
