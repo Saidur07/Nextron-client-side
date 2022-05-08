@@ -1,5 +1,4 @@
 import axios from "axios";
-import { signOut } from "firebase/auth";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useNavigate } from "react-router-dom";
@@ -8,7 +7,6 @@ import Loader from "../../components/Shared/Loader/Loader";
 import MyProduct from "../../components/Shared/MyProduct/MyProduct";
 import bar from "../../components/Shared/Progress/Progress";
 import auth from "../../firebase.init";
-// import useProducts from "../../hooks/useProducts";
 
 const MyProducts = () => {
   const [products, setProducts] = useState([]);
@@ -28,13 +26,13 @@ const MyProducts = () => {
       } catch (err) {
         if (err.response.status === 401 || err.response.status === 403) {
           localStorage.removeItem("token");
-          signOut(auth);
-          navigate("/login");
+          console.log("Error :(");
         }
       }
     }
     getProducts();
-  }, []);
+  }, [user.email]);
+
   const handleDelete = (id) => {
     Swal.fire({
       title: "Are you sure to delete this?",
@@ -46,17 +44,15 @@ const MyProducts = () => {
       confirmButtonText: "Yeahh ",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`https://still-eyrie-22111.herokuapp.com/productlist/${id}`, {
+        const url = `https://still-eyrie-22111.herokuapp.com/product/${id}`;
+        fetch(url, {
           method: "DELETE",
         })
           .then((res) => res.json())
           .then((data) => {
-            if (data.deletedCount) {
-              const remaining = products.filter((user) => user._id !== id);
-              setProducts(remaining);
-            }
+            const remaining = products.filter((product) => product._id !== id);
+            setProducts(remaining);
           });
-
         Swal.fire(
           "Deleted!",
           "The product delted successfully from the database",
@@ -97,7 +93,12 @@ const MyProducts = () => {
           <div className="container">
             <div className="flex flex-wrap -mx-4">
               {products.length === 0 ? (
-                <Loader></Loader>
+                <div className="flex flex-col mx-auto">
+                  <Loader></Loader>
+                  <h1 className="text-white text-center text-xl md:tracking-widest md:text-4xl my-4 font-mono font-extrabold">
+                    Nothing Found. Nothing Could Be Found.
+                  </h1>
+                </div>
               ) : (
                 products.map((product) => (
                   <MyProduct
@@ -107,6 +108,16 @@ const MyProducts = () => {
                   ></MyProduct>
                 ))
               )}
+            </div>
+            <div className="flex items-center justify-center">
+              <button
+                onClick={() => navigate("/products")}
+                className="w-2/3 mx-auto inline-flex items-center justify-center h-12 px-6 font-medium text-gray-100 transition duration-200 rounded shadow-md bg-darku border-0 hover:bg-opacity-75 focus:shadow-outline focus:outline-none active:scale-90 text-lg md:text-xl md:tracking-wide my-4"
+                data-mdb-ripple="true"
+                data-mdb-ripple-color="white"
+              >
+                Manage Products
+              </button>
             </div>
           </div>
         </div>

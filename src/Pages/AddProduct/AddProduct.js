@@ -18,14 +18,6 @@ const AddProduct = () => {
       },
       body: JSON.stringify(data),
     }).then((res) => res.json());
-
-    fetch(`https://still-eyrie-22111.herokuapp.com/addproduct`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ ...data, email }),
-    }).then((res) => res.json());
     Swal.fire("Done!", "The Product added Successfully!", "success");
     reset();
   };
@@ -187,11 +179,11 @@ const AddProduct = () => {
                       Supplier Email
                     </label>
                     <input
-                      className="w-full px-6 py-2 mb-3 text-sm leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
+                      className="w-full px-6 py-2 mb-3 text-sm leading-tight text-gray-300 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
                       id="Email"
                       type="email"
                       placeholder="Email"
-                      value={user.email}
+                      value={email}
                       {...register("email")}
                       required
                       readOnly
